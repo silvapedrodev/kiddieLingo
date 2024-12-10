@@ -3,10 +3,7 @@
 
 <br>
 
-<div style="background-color: #FAFAFA; display: inline-block; border-radius: 12px; padding: 8px">
-  <img src="./src/public/img/logo.svg" width="150px" ></img>
-</div>
-
+<img src="./src/public/img/logo.svg" width="150px" ></img>
 
 
 <h3 align="center">Status: 🛠️ In development</h3>
