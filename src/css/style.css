@@ -25,7 +25,6 @@
 }
 
 
-
 /* bloqueia a rolagem quando o menu está aberto */
 body.no-scroll, html.no-scroll {
   overflow-y: hidden; 
@@ -205,20 +204,6 @@ nav {
     height: 100%;
   }
 
-  /* --- overlay atrás do menu ---  */
-  /* .modal-wrapper::after{
-    content: '';
-    position: absolute;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--purple-900);
-    transform: translate(-100vw);
-    z-index: -1;
-
-    transition: transform 500ms ease; 
-  } */
-
   .nav-menu::after {
     content: '';
     position: absolute;
@@ -252,11 +237,6 @@ nav {
 .nav-menu.active {
   transform: translateX(0);
 }
-
-/* .nav-menu.active .nav-menu::after {
-  transform: translate(0);
-  backdrop-filter: brightness(50%);
-} */
 
 .nav-menu.active::after {
   backdrop-filter: brightness(50%);
