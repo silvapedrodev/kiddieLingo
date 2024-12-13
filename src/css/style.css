@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%; /*10px*/
+  --font-default: "Fredoka", serif;
+
+  /* Colors */
+  --gray-0: #FFFFFF;
+  --gray-50: #F5F5F5;
+  --gray-100: #FAFAFA;
+  --gray-200: #EAEAEA;
+  --gray-300: #AEADB3;
+  --gray-950: #020617;
+  
+  
+  --purple-500: #583BBF;
+  --purple-800: #260259;
+  --purple-900: rgba(37, 25, 81, 0.20);
+}
+
+
+
+/* bloqueia a rolagem quando o menu está aberto */
+body.no-scroll, html.no-scroll {
+  overflow-y: hidden; 
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--font-default);
+  background-color: var(--gray-100);
+
+  overflow-x: hidden;
+}
+
+/* --------- Barra de Navegação --------  */
+header {
+  background-color: var(--gray-0);
+
+  border-radius: 0 0rem 0.8rem 0.8rem;
+  box-shadow: 0 2px 8px var(--purple-900);
+}
+
+header a {
+  text-decoration: none;
+}
+
+nav {
+  height: 8rem;
+  padding: 1.6rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+#logo{
+  width: 10rem;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1.6rem;
+  list-style: none;
+}
+
+.nav-list a {
+  font-size: 1.8rem;
+  color: var(--purple-500);
+  padding-block: 1.6rem;
+}
+
+
+.mobile-menu {
+  display: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.mobile-menu img {
+  width: 4rem;
+}
+
+.btnClose {
+  display: none;
+  cursor: pointer;
+}
+
+.btnStart {
+  background-color: var(--purple-500);
+  font-family: var(--font-default);
+  font-weight: bolder;
+  font-size: 1.4rem;
+  color: var(--gray-0);
+  text-transform: uppercase;
+
+  border-radius: 0.8rem;
+  padding: 1.6rem 3rem;
+  box-shadow: 0px 6px 0 var(--purple-800);
+
+  transition: transform 200ms;
+}
+
+.btnStart:active {
+  transform: scale(96%);
+}
+
+/* ----- Menu Mobile -------  */
+
+@media (max-width: 797px) {
+
+  .btnStart {
+    display: none;
+  }
+
+  .logoMenu {
+    position: absolute;
+    top: 1.6rem;
+    left: 2rem;
+    width: 12rem;
+  }
+
+  nav a:first-child {
+    order: 1;
+    margin: 0 auto; 
+  }
+
+  .mobile-menu {
+    display: contents;
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    transform: translateX(-100%);
+    z-index: 2;
+    overflow-x: hidden;
+    
+    transition: transform 300ms ease-in;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+
+    padding: 1.6rem;
+    margin-top: 10rem; 
+  }
+
+  .nav-list li {
+    width: 70%;
+    color: var(--gray-300);
+    border-radius: 9999px;
+  }
+
+  .nav-list a {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem 3rem;
+    color: var(--gray-950);
+  }
+
+  .nav-list li a.active {
+    background-color: var(--gray-200);
+    border-radius: 9999px;
+  }
+
+  .nav-list li a.active i {
+    color: var(--gray-950);
+  }
+
+  .nav-list a:focus {
+    outline: 2px solid var(--gray-950);
+    border-radius: 9999px;
+
+    backdrop-filter: contrast(90%);
+  }
+
+  .nav-list i {
+    color: var(--gray-300);
+    font-size: 2.5rem;
+  }
+
+  .modal-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--gray-100);
+    width: 90vw;
+    height: 100%;
+  }
+
+  /* --- overlay atrás do menu ---  */
+  /* .modal-wrapper::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--purple-900);
+    transform: translate(-100vw);
+    z-index: -1;
+
+    transition: transform 500ms ease; 
+  } */
+
+  .nav-menu::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--purple-900);
+    transform: translate(-100vw);
+    z-index: -1;
+
+    transition: transform 500ms ease;
+  }
+
+  /* ------- button close menu -----  */
+  .btnClose {
+    display: block;
+    position: absolute;
+    top: 2.6rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  .btnClose i {
+    color: var(--gray-950);
+    font-size: 4rem;
+  }
+}
+
+.nav-menu.active {
+  transform: translateX(0);
+}
+
+/* .nav-menu.active .nav-menu::after {
+  transform: translate(0);
+  backdrop-filter: brightness(50%);
+} */
+
+.nav-menu.active::after {
+  backdrop-filter: brightness(50%);
+  transform: translate(0);
+}

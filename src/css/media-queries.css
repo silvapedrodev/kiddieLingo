@@ -1,0 +1,39 @@
+/* --- Breakpoint para tablets e desktop ----- */
+
+@media screen and (min-width: 798px) {
+  nav {
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto 1fr; 
+    gap: 4rem; 
+    align-items: center; 
+
+    padding: 2.5rem 4rem;
+  }
+
+  nav .btnStart {
+    justify-self: end;
+  }
+
+  .nav-list li a {
+    padding-block: 1px;
+    position: relative;
+  }
+
+  .nav-list li a::after {
+   content: '';
+   width: 0%;
+   height: 3px;
+   background-color: var( --purple-500);
+   position: absolute;
+   left: 0;
+   bottom: -6px;
+
+   transition: 0.5s;
+  }
+
+  .nav-list li a:hover::after {
+    width: 100%;
+  }
+
+}

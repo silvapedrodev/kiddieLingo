@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KiddieLingo</title>
-    <link rel="shortcut icon" href="src/public/img/favicon.svg" type="image/svg+xml">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KiddieLingo</title>
+  <link rel="shortcut icon" href="src/public/img/favicon.svg" type="image/svg+xml">
+
+	<link rel="stylesheet" href="./src/css/style.css">
+	<link rel="stylesheet" href="./src/css/media-queries.css">
 </head>
 <body>
-    
+	<header>
+		<nav>
+			<a href="">
+				<img id="logo" src="./src/public/img/logo.svg" alt="logo KiddieLingo">
+			</a>
+			<button class="mobile-menu" aria-label="Abrir menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+				<img src="./src/public/img/menu-icon.svg" alt="Ícone de menu" tabindex="0">
+			</button>
+			<div class="nav-menu">
+				<div class="modal-wrapper">
+					<ul id="menu" class="nav-list" role="menu" aria-hidden="false">
+						<button class="btnClose" aria-label="fechar menu">
+							<i class="fa-solid fa-xmark"></i>
+						</button>
+						<li class="home"><a href="/index.html"></i>Início</a></li>
+						<li class="alphabet"><a href="/">Alfabeto</a></li>
+						<li class="tobe"><a href="#">To be</a></li>
+						<li class="shapes"><a href="#">Formas</a></li>
+						<li class="numbers"><a href="#">Números</a></li>
+					</ul>
+				</div>
+			</div>
+			<a href="" class="btnStart">comece agora</a>
+		</nav>
+	</header>
+
+	<main>
+		
+	</main>
+
+	<script type="module" src="./src/js/main.js"></script>
+	<script src="https://kit.fontawesome.com/5f6ce912e4.js" crossorigin="anonymous"></script>
 </body>
 </html>
