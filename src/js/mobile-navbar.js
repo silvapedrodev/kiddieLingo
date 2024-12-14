@@ -85,6 +85,7 @@ export default function initializeMobileNav() {
 
       if(iconMapping[className]) {
         iconElement.classList.add(...iconMapping[className])
+        iconElement.style.pointerEvents = "none"
         link.insertBefore(iconElement, link.firstChild)
       }
     }
