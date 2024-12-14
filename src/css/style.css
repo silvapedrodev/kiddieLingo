@@ -85,15 +85,9 @@ nav {
   border: none;
 }
 
-.mobile-menu img {
-  width: 4rem;
-  padding-block: 2rem;
-}
-
 .btnClose {
   display: none;
   cursor: pointer;
-  padding-block: 2rem;
 }
 
 .btnStart {
@@ -135,9 +129,17 @@ nav {
   }
 
   .mobile-menu {
-    display: contents;
-    z-index: 3;
+    display: block;
+    background: none;
+    padding: 2.4rem;
     cursor: pointer;
+    position: relative;
+  }
+
+  .mobile-menu img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
   }
 
   .nav-menu {
