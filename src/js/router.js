@@ -25,14 +25,26 @@ const handleLocation = async () => {
   const path = window.location.pathname
   const route = routes[path] || routes[404]
 
-  loading.style.display = "block";
+  const loadingDelay = 500; // Exemplo: 500ms de espera antes de mostrar a animação
+  let loadingTimeout;
+
+  // Inicia o timeout para mostrar a animação de carregamento após o tempo configurado
+  loadingTimeout = setTimeout(() => {
+    loading.style.display = "block"
+  }, loadingDelay);
+
   appPage.innerHTML = ""
 
-  const html = await fetch(route).then((data) => data.text())
-  appPage.innerHTML = html
-
-  loading.style.display = "none"
-  setActiveLink()
+  try {
+    const html = await fetch(route).then((data) => data.text());
+    appPage.innerHTML = html
+  } catch (error) {
+    console.error("Erro ao carregar a página:", error)
+  } finally {
+    clearTimeout(loadingTimeout)
+    loading.style.display = "none"
+    setActiveLink()
+  }
 }
 
 

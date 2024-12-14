@@ -183,8 +183,6 @@ export function setActiveLink() {
   const currentPath = window.location.pathname
   const menuLinks = document.querySelectorAll(".nav-list a")
 
-  console.log("a")
-
   menuLinks.forEach(link => {
     const href = link.getAttribute("href")
     
