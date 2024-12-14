@@ -28,6 +28,10 @@ const handleLocation = async () => {
   const loadingDelay = 500; // Exemplo: 500ms de espera antes de mostrar a animação
   let loadingTimeout;
 
+  if (path.startsWith("/to-be") && !routes[path]) {
+    route = routes["/to-be"] // Para qualquer sub-rota de /to-be, vai para /to-be.html
+  }
+
   // Inicia o timeout para mostrar a animação de carregamento após o tempo configurado
   loadingTimeout = setTimeout(() => {
     loading.style.display = "block"
