@@ -60,8 +60,10 @@ nav {
   margin: auto;
 }
 
+
 #logo{
   width: 10rem;
+  pointer-events: none;
 }
 
 .nav-list {
@@ -112,7 +114,6 @@ nav {
 }
 
 /* ----- Menu Mobile -------  */
-
 @media (max-width: 797px) {
 
   .btnStart {

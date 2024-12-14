@@ -1,61 +1,94 @@
 import { setActiveLink } from "./mobile-navbar.js"
 
-const route = (event) => {
-  event = event || window.event
-  event.preventDefault()
-  window.history.pushState({}, "", event.target.href)
-  handleLocation()
-  setActiveLink()
-} 
+export class Router {
+  routes = {}
 
-const routes = {
-  404: "/src/pages/404.html",
-  "/": "/src/pages/home.html",
-  "/alphabet": "/src/pages/alphabet.html",
-  "/to-be": "/src/pages/to-be.html",
-  "/to-be/learn-more": "/src/pages/learn-more.html",
-  "/shapes": "/src/pages/shapes.html",
-  "/numbers": "/src/pages/numbers.html",
-  "/learn-more": "/src/pages/learn-more.html"
-}
-
-const handleLocation = async () => {
-  const loading = document.querySelector(".loader")
-  const appPage = document.getElementById("app")
-  const path = window.location.pathname
-  const route = routes[path] || routes[404]
-
-  const loadingDelay = 500; // Exemplo: 500ms de espera antes de mostrar a animação
-  let loadingTimeout;
-
-  if (path.startsWith("/to-be") && !routes[path]) {
-    route = routes["/to-be"]; // Roteia todas as sub-rotas de '/to-be' para '/to-be.html'
+  add(routeName, linkPage) {
+    this.routes[routeName] = linkPage
   }
 
-  // Inicia o timeout para mostrar a animação de carregamento após o tempo configurado
-  loadingTimeout = setTimeout(() => {
-    loading.style.display = "block"
-  }, loadingDelay);
-
-  appPage.innerHTML = ""
-
-  try {
-    const html = await fetch(route).then((data) => data.text());
-    appPage.innerHTML = html
-  } catch (error) {
-    console.error("Erro ao carregar a página:", error)
-  } finally {
-    clearTimeout(loadingTimeout)
-    loading.style.display = "none"
+  route (event) {
+    event = event || window.event
+    event.preventDefault()
+    window.history.pushState({}, "", event.target.href)
+    this.handleLocation()
     setActiveLink()
+  } 
+
+  async handleLocation() {
+    const path = window.location.pathname
+    const route = this.getRoute(path)
+
+    const loading = document.querySelector(".loader")
+  
+    this.showLoader(loading)
+    this.clearAppContent()
+    this.clearPageCSS()
+  
+    try {
+      const html = await this.fetchPageContent(route)
+      this.updateAppContent(html)
+      this.updatePageCSS(route)
+    } catch (error) {
+      this.handleError(error)
+    } finally {
+      this.hideLoader(loading)
+      setActiveLink()
+    }
+  }
+
+  getRoute(path) {
+    return this.routes[path] || this.routes[404]
+  }
+
+  showLoader(loading) {
+    const loadingDelay = 500; // Tempo para mostrar a animação
+    this.loadingTimeout = setTimeout(() => {
+      loading.style.display = "block"
+    }, loadingDelay)
+  }
+
+  hideLoader(loading) {
+    clearTimeout(this.loadingTimeout)
+    loading.style.display = "none"
+  }
+
+  clearAppContent() {
+    const appPage = document.getElementById("app")
+    appPage.innerHTML = ""
+  }
+
+  async fetchPageContent(route) {
+    return await fetch(route).then((data) => data.text())
+  }
+  
+  updateAppContent(html) {
+    const appPage = document.getElementById("app")
+    appPage.innerHTML = html
+  }
+  
+  handleError(error) {
+    console.error(new Error(`404: Page not found "${error}"`))
+  }
+
+  updatePageCSS(path) {
+    const pageName = path.split('/').pop().replace('.html', '')
+    const cssPath = `/src/css/${pageName}.css`
+    
+    this.clearPageCSS()
+
+    const cssLinkElement = document.createElement("link")
+    cssLinkElement.rel = "stylesheet"
+    cssLinkElement.href = cssPath
+    cssLinkElement.setAttribute("data-page-css", "true")
+
+    document.head.appendChild(cssLinkElement)
+  }
+
+  clearPageCSS() {
+    const isCurrentPageCSS = document.querySelector('link[data-page-css="true"]')
+    if (isCurrentPageCSS) {
+      document.head.removeChild(isCurrentPageCSS)
+    }
   }
 }
-
-
-window.onpopstate = () => {
-  handleLocation()
-  setActiveLink()
-} 
-window.route = route
-
-handleLocation()
