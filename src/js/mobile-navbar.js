@@ -1,5 +1,5 @@
 
-export function initializeMobileNav() {
+export default function initializeMobileNav() {
 
   // ------ Componentes --------- 
   const menuButtons = document.querySelectorAll(".mobile-menu, .btnClose")
@@ -72,15 +72,6 @@ export function initializeMobileNav() {
     const tabindexValue = isActive ? "0" : "-1"
     menuLinks.forEach(link => {
       link.setAttribute("tabindex", tabindexValue)
-    })
-  }
-
-  function setActiveLink() { 
-    const currentPath = window.location.pathname
-
-    menuLinks.forEach(link => {
-      link.classList.toggle("active", 
-        link.getAttribute("href") === currentPath || (currentPath === "/" && link.getAttribute("href") === "/"))
     })
   }
 
@@ -163,6 +154,15 @@ export function initializeMobileNav() {
     button.addEventListener("touchstart", toggleMenuMobile)
   })
 
+  // ----- Fecha o menu ao clicar em um link/rota
+  menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      if (nav.classList.contains("active")) {
+        toggleMenuMobile(new Event("click")) // Reutiliza a função existente para fechar o menu
+      }
+    })
+  })
+
   // Atualiza a visibilidade do menu, a largura da janela e a exibição dos ícones ao redimensionar
   window.addEventListener("resize", () => {
     updateWindowWidth()
@@ -173,10 +173,22 @@ export function initializeMobileNav() {
 
   // Define o link ativo ao carregar a página e ao navegar no histórico
   window.addEventListener("load", () => {
-    setActiveLink()
     updateMenuItems()
     toggleLogoMenu()
   })
 
-  window.addEventListener("popstate", setActiveLink);  // Para navegação no histórico
+}
+
+export function setActiveLink() { 
+  const currentPath = window.location.pathname
+  const menuLinks = document.querySelectorAll(".nav-list a")
+
+  console.log("a")
+
+  menuLinks.forEach(link => {
+    const href = link.getAttribute("href")
+    
+    const isActive = currentPath === href || currentPath.startsWith(`${href}/`) || (currentPath === "/" && href === "/")
+    link.classList.toggle("active", isActive)
+  })
 }

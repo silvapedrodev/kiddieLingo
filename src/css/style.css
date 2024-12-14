@@ -76,7 +76,6 @@ nav {
   padding-block: 1.6rem;
 }
 
-
 .mobile-menu {
   display: none;
   margin: 0;
@@ -207,9 +206,9 @@ nav {
   .nav-menu::after {
     content: '';
     position: absolute;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
+    inset: 0; 
+    width: 100%; 
+    height: 100%; 
     background-color: var(--purple-900);
     transform: translate(-100vw);
     z-index: -1;
@@ -241,4 +240,33 @@ nav {
 .nav-menu.active::after {
   backdrop-filter: brightness(50%);
   transform: translate(0);
+}
+
+/* -------- Loading Effect ------  */
+.loader {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 3px solid var(--purple-500);
+  border-top-color: transparent;
+  animation: rot1 0.7s linear infinite;
+
+}
+
+@keyframes rot1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ------- Main | #app --------  */
+main {
+  padding: 1.6rem 1.6rem;
 }

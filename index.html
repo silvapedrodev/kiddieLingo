@@ -12,7 +12,7 @@
 <body>
 	<header>
 		<nav>
-			<a href="">
+			<a href="/">
 				<img id="logo" src="./src/public/img/logo.svg" alt="logo KiddieLingo">
 			</a>
 			<button class="mobile-menu" aria-label="Abrir menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
@@ -24,11 +24,11 @@
 						<button class="btnClose" aria-label="fechar menu">
 							<i class="fa-solid fa-xmark"></i>
 						</button>
-						<li class="home"><a href="/index.html"></i>Início</a></li>
-						<li class="alphabet"><a href="/">Alfabeto</a></li>
-						<li class="tobe"><a href="#">To be</a></li>
-						<li class="shapes"><a href="#">Formas</a></li>
-						<li class="numbers"><a href="#">Números</a></li>
+						<li class="home" onclick="route()"><a href="/"></i>Início</a></li>
+						<li class="alphabet" onclick="route()"><a href="/alphabet">Alfabeto</a></li>
+						<li class="tobe" onclick="route()"><a href="/to-be">To be</a></li>
+						<li class="shapes" onclick="route()"><a href="/shapes">Formas</a></li>
+						<li class="numbers" onclick="route()"><a href="/numbers">Números</a></li>
 					</ul>
 				</div>
 			</div>
@@ -36,11 +36,13 @@
 		</nav>
 	</header>
 
-	<main>
-		
+	<div class="loader"></div>
+
+	<main id="app">
 	</main>
 
-	<script type="module" src="./src/js/main.js"></script>
 	<script src="https://kit.fontawesome.com/5f6ce912e4.js" crossorigin="anonymous"></script>
+	<script type="module" src="./src/js/main.js"></script>
+	<script type="module" src="/src/js/router.js"></script>
 </body>
 </html>
