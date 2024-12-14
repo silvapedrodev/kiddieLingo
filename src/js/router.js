@@ -29,7 +29,7 @@ const handleLocation = async () => {
   let loadingTimeout;
 
   if (path.startsWith("/to-be") && !routes[path]) {
-    route = routes["/to-be"] // Para qualquer sub-rota de /to-be, vai para /to-be.html
+    route = routes["/to-be"]; // Roteia todas as sub-rotas de '/to-be' para '/to-be.html'
   }
 
   // Inicia o timeout para mostrar a animação de carregamento após o tempo configurado
