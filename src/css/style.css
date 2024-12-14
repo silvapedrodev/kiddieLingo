@@ -87,11 +87,13 @@ nav {
 
 .mobile-menu img {
   width: 4rem;
+  padding-block: 2rem;
 }
 
 .btnClose {
   display: none;
   cursor: pointer;
+  padding-block: 2rem;
 }
 
 .btnStart {
@@ -161,7 +163,7 @@ nav {
   }
 
   .nav-list li {
-    width: 70%;
+    width: 90%;
     color: var(--gray-300);
     border-radius: 9999px;
   }
