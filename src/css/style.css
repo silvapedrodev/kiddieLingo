@@ -46,10 +46,6 @@ header {
   box-shadow: 0 2px 8px var(--purple-900);
 }
 
-header a {
-  text-decoration: none;
-}
-
 nav {
   height: 8rem;
   padding: 1.6rem;
@@ -60,6 +56,14 @@ nav {
   margin: auto;
 }
 
+#app {
+  background-color: var(--purple-500);
+}
+
+a {
+  text-decoration: none;
+  color: var(--gray-0);
+}
 
 #logo{
   width: 10rem;
@@ -273,5 +277,7 @@ nav {
 
 /* ------- Main | #app --------  */
 main {
+  background-color: var(--purple-500);
+  color: white;
   padding: 1.6rem 1.6rem;
 }

@@ -20,3 +20,11 @@ window.onpopstate = () => {
 router.handleLocation()
 
 window.route = (event) => router.route(event)
+
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("a")
+  
+  if (link) {
+    route(event)
+  }
+})

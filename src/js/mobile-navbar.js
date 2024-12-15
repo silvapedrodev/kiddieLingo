@@ -191,3 +191,24 @@ export function setActiveLink() {
     link.classList.toggle("active", isActive)
   })
 }
+
+export function toggleNavStartButton(path) {
+  const startButton = document.querySelector(".btnStart")
+  const nav = document.querySelector("nav")
+
+  if(path == "/") {
+    if (!startButton) {  
+      const button = document.createElement("a")
+      button.href = "/to-be"
+      button.classList.add("btnStart")
+      button.textContent = "comece agora"
+
+      nav.appendChild(button);  
+    }
+  } else {
+    
+    if (startButton) {
+      startButton.remove(); 
+    }
+  }
+}

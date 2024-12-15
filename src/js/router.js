@@ -1,4 +1,4 @@
-import { setActiveLink } from "./mobile-navbar.js"
+import { setActiveLink, toggleNavStartButton  } from "./mobile-navbar.js"
 
 export class Router {
   routes = {}
@@ -24,6 +24,7 @@ export class Router {
     this.showLoader(loading)
     this.clearAppContent()
     this.clearPageCSS()
+    toggleNavStartButton(path)
   
     try {
       const html = await this.fetchPageContent(route)
@@ -54,7 +55,7 @@ export class Router {
   }
 
   clearAppContent() {
-    const appPage = document.getElementById("app")
+    const appPage = document.getElementById("main-page")
     appPage.innerHTML = ""
   }
 
@@ -63,7 +64,7 @@ export class Router {
   }
   
   updateAppContent(html) {
-    const appPage = document.getElementById("app")
+    const appPage = document.getElementById("main-page")
     appPage.innerHTML = html
   }
   
@@ -91,4 +92,5 @@ export class Router {
       document.head.removeChild(isCurrentPageCSS)
     }
   }
+
 }
