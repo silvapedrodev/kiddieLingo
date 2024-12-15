@@ -36,4 +36,47 @@
     width: 100%;
   }
 
+  section:first-child {
+    max-width: 1280px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    max-height: 100%;
+    align-items: stretch;
+    gap: 1.6rem;
+    padding: 10rem 0 0;
+
+    margin: auto;
+  }
+
+  section.pageMain {
+    padding: 8rem 0 0;
+  }
+  
+  .left-content {
+    align-self: center;
+    gap: 1.6rem;
+    padding: 1.6rem;
+    margin-top: -12rem;
+  }
+
+  .left-content h1 {
+    font-size: 3.2rem;
+  }
+
+  .left-content p {
+    font-size: 1.6rem;
+  }
+  
+  .right-content {
+    display: flex; 
+    justify-content: flex-end;
+    height: 100%;
+  }
+  
+  .right-content img {
+    max-width: 60rem;
+    height: auto;
+    object-fit: contain;
+  }
+
 }

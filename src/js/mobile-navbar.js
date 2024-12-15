@@ -200,7 +200,7 @@ export function toggleNavStartButton(path) {
     if (!startButton) {  
       const button = document.createElement("a")
       button.href = "/to-be"
-      button.classList.add("btnStart")
+      button.classList.add("btnStart", "btnDefault")
       button.textContent = "comece agora"
 
       nav.appendChild(button);  

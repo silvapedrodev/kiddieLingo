@@ -1,0 +1,53 @@
+@media screen and (max-width: 797px) {
+
+  .btnStart{
+    display: none;
+  }
+
+  .btnStartMain {
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+    margin: auto;
+  }
+
+
+  .homeMain {
+    background: url('/src/public/img/cloud-mobile.svg') no-repeat;
+    background-size: contain; 
+    background-position: center 2rem; 
+  }
+
+  .left-content {
+    margin-top: 10vh;
+  }
+
+  .right-content {
+    margin-top: 8rem;
+  }
+}
+
+@media screen and (min-width: 798px) {
+
+  .homeMain {
+    max-width: 2000px;
+    margin-top: 4rem;
+    background: url('/src/public/img/cloud-desktop.svg') no-repeat;
+    background-size: contain; 
+    background-position: center 0rem;
+
+  }
+  
+  .left-content {
+    margin-top: -12rem;
+  }
+
+  .btnStartMain {
+    display: none;
+  }
+}
+
+section:not(:first-of-type) {
+  background-color: var(--gray-100);
+  padding: 1.6rem;
+}

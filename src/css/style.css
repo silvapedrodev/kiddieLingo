@@ -22,6 +22,7 @@
   --purple-500: #583BBF;
   --purple-800: #260259;
   --purple-900: rgba(37, 25, 81, 0.20);
+  --pink-500: #D96A93;
 }
 
 
@@ -54,10 +55,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   margin: auto;
-}
-
-#app {
-  background-color: var(--purple-500);
 }
 
 a {
@@ -94,7 +91,7 @@ a {
   cursor: pointer;
 }
 
-.btnStart {
+.btnDefault {
   background-color: var(--purple-500);
   font-family: var(--font-default);
   font-weight: bolder;
@@ -109,7 +106,11 @@ a {
   transition: transform 200ms;
 }
 
-.btnStart:active {
+.btnStart {
+  display: block;
+}
+
+.btnDefault:active {
   transform: scale(96%);
 }
 
@@ -279,8 +280,46 @@ a {
 }
 
 /* ------- Main | #app --------  */
-main {
-  background-color: var(--purple-500);
+#main-page {
   color: white;
-  padding: 1.6rem 1.6rem;
+  background-color: var(--purple-500);
+}
+
+section:first-child {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 2.4rem;
+
+  background-color: var(--purple-500);
+
+  padding: 0 2.4rem;
+}
+
+.left-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  margin: 4.4rem 0 0;
+}
+
+.left-content h2 {
+  font-size: 1.6rem;
+  color: var(--pink-500);
+}
+
+.left-content p {
+  line-height: 2rem;
+  align-self: center;
+}
+
+.right-content {
+  max-width: 100%;
+}
+
+.right-content img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
