@@ -31,5 +31,8 @@ O **KiddieLingo** é uma plataforma educacional para o ensino de inglês voltada
 
 <img src="./src/public/preview/tobe-preview.png" alt="verb to be preview" width="100%"></img>
 
+## Preview
+- <a href="https://kiddie-lingo.vercel.app/" target="_blank">**Click Here** &#x1F517;</a>
+
 ## 👨‍💻 Author
 This project was made with ❤️ by **Pedro.S.**
