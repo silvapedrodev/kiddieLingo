@@ -1,0 +1,49 @@
+{
+  "/": {
+    "sectionClass": "homeMain",
+    "title": "Divirta-se hoje, domine o inglês amanhã!",
+    "subtitle": "Desperte o explorador que há em você!",
+    "imgSrc": "./src/public/img/home-main-img.svg",
+    "imgAlt": "Imagem alunos estudando"
+  },
+
+  "/alphabet": {
+    "sectionClass": "pageMain",
+    "title": "Explore o alfabeto com a gente!",
+    "description": "Aprender as letras é o primeiro passo para dominar o inglês. Descubra cada letra com exemplos divertidos e veja como elas formam palavras de forma simples e visual. Vamos começar essa jornada juntos!",
+    "imgSrc": "./src/public/img/alphabet-main-img.svg",
+    "imgAlt": "Imagem de aluno com letras do alfabeto"
+  },
+
+  "/to-be": {
+    "sectionClass": "pageMain",
+    "title": "Vamos Aprender o Verbo \"To Be\" Juntos!",
+    "description": "Aprender o verbo 'to be' é como construir frases mágicas! Vamos descobrir como ele ajuda a falar sobre quem somos, o que estamos fazendo e onde estamos. Juntos, vamos explorar esse verbo de uma maneira divertida e simples, para que você possa usá-lo com confiança em qualquer situação!",
+    "imgSrc": "./src/public/img/to-be-main-img.svg",
+    "imgAlt": "Imagem de crianças na escola"
+  },
+
+  "/to-be/learn-more": {
+    "sectionClass": "pageMain",
+    "title": "Vamos Aprender o Verbo \"To Be\" Juntos!",
+    "description": "Aprender o verbo 'to be' é como construir frases mágicas! Vamos descobrir como ele ajuda a falar sobre quem somos, o que estamos fazendo e onde estamos. Juntos, vamos explorar esse verbo de uma maneira divertida e simples, para que você possa usá-lo com confiança em qualquer situação!",
+    "imgSrc": "./src/public/img/to-be-main-img.svg",
+    "imgAlt": "Imagem de crianças na escola"
+  },
+
+  "/shapes": {
+    "sectionClass": "pageMain",
+    "title": "Descubra o Mundo das Formas!",
+    "description": "Aprender formas é como descobrir tesouros escondidos! Vamos explorar círculos, quadrados, triângulos e outras figuras de forma divertida e colorida. Prepare-se para enxergar formas em todos os lugares",
+    "imgSrc": "./src/public/img/shapes-main-img.svg",
+    "imgAlt": "Imagem de crianças com formas geométricas"
+  },
+
+  "/numbers": {
+    "sectionClass": "pageMain",
+    "title": "Vamos Contar Juntos!",
+    "description": "Aprender os números em inglês é como brincar de contar! Venha descobrir os números de forma divertida e prática. Vamos explorar juntos, do 1 ao 10, e ver como é fácil contar em inglês. ",
+    "imgSrc": "./src/public/img/number-main-img.svg",
+    "imgAlt": "Imagem de crianças pulando amarelinha de 1 a 10"
+  }
+}

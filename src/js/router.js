@@ -1,4 +1,5 @@
 import { setActiveLink, toggleNavStartButton  } from "./mobile-navbar.js"
+// import { pagesContent } from "../../data/pagesContent.json"
 
 export class Router {
   routes = {}
@@ -27,8 +28,12 @@ export class Router {
     toggleNavStartButton(path)
   
     try {
-      const html = await this.fetchPageContent(route)
+      const [html, pagesContent] = await Promise.all([
+        this.fetchPageContent(route),
+        this.loadPagesContent(), // Carrega o conteúdo JSON tratado
+      ]);
       this.updateAppContent(html)
+      this.renderDynamicContent(path, pagesContent)
       this.updatePageCSS(route)
     } catch (error) {
       this.handleError(error)
@@ -91,6 +96,49 @@ export class Router {
     if (isCurrentPageCSS) {
       document.head.removeChild(isCurrentPageCSS)
     }
+  }
+
+  renderSection(route, contentData) {
+    const data = contentData[route]
+
+    if (!data) {
+      console.error(`Content not found for route: ${route}`);
+      return ""
+    }
+
+    const isHomeRoute = route === "/"
+
+    return `
+    <section class="${data.sectionClass}">
+      <div class="left-content">
+        <h1>${data.title}</h1>
+        ${
+          isHomeRoute ? `<h2>${data.subtitle}</h2>` : `<p>${data.description}</p>` 
+        }
+      </div>
+      <div class="right-content">
+        <img src="${data.imgSrc}" alt="${data.imgAlt}">
+      </div>
+    </section>
+    `
+  }
+
+  async loadPagesContent() {
+    const response = await fetch("../../data/pagesContent.json"); // Carrega o JSON do arquivo
+    
+    if (!response.ok) {
+      throw new Error(`Failed to load pages content: ${response.statusText}`);
+    }
+  
+    const contentData = await response.json(); // Converte a resposta para JSON
+    
+    return contentData
+  }
+
+  renderDynamicContent(path, pagesContent) {
+    const sectionHTML = this.renderSection(path, pagesContent)
+    const appPage = document.getElementById("main-page")
+    appPage.insertAdjacentHTML("afterbegin", sectionHTML) 
   }
 
 }
