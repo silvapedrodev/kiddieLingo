@@ -210,6 +210,10 @@ a {
     background-color: var(--gray-100);
     width: 90vw;
     height: 100%;
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--purple-500) transparent;
   }
 
   .nav-menu::after {
@@ -263,7 +267,6 @@ a {
   border: 3px solid var(--purple-500);
   border-top-color: transparent;
   animation: rot1 0.7s linear infinite;
-
 }
 
 @keyframes rot1 {
