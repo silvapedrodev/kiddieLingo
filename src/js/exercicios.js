@@ -51,7 +51,7 @@ function waitForElement(selector) {
         resolve(element); // O contêiner foi encontrado, podemos continuar
       }
     }, 200) // Verifica a cada 200ms
-  });
+  })
 }
 
 function renderExercicio(container, question, index) {
@@ -80,7 +80,7 @@ function renderExercicio(container, question, index) {
     </form>
   `;
 
-  container.insertAdjacentHTML("beforeend", questionHTML);
+  container.insertAdjacentHTML("beforeend", questionHTML)
 }
 
 function handleFormSubmit(event) {
@@ -93,19 +93,19 @@ function handleFormSubmit(event) {
   // Mostra as respostas
   form.querySelectorAll(".answer").forEach((answer) => {
     answer.style.display = "block"
-  });
+  })
 
   // Desativa os inputs para evitar novas submissões
   form.querySelectorAll("input").forEach((input) => {
     input.disabled = true
-  });
+  })
 
   // Oculta as alternativas de resposta
   form.querySelectorAll("p").forEach((p) => {
     if (!p.classList.contains("answer")) {
       p.style.display = "none";
     }
-  });
+  })
 
   // Oculta o botão de submit
   form.querySelector(".btnSubmit").style.display = "none"
@@ -116,5 +116,5 @@ function shuffleArray(array) {
   return array
     .map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value);
+    .map(({ value }) => value)
 }
