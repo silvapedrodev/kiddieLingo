@@ -100,6 +100,13 @@ function handleFormSubmit(event) {
     input.disabled = true
   });
 
+  // Oculta as alternativas de resposta
+  form.querySelectorAll("p").forEach((p) => {
+    if (!p.classList.contains("answer")) {
+      p.style.display = "none";
+    }
+  });
+
   // Oculta o botão de submit
   form.querySelector(".btnSubmit").style.display = "none"
 }
