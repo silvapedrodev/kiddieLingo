@@ -1,0 +1,138 @@
+.titleSection {
+  margin-bottom: 2.4rem;
+}
+
+.cardLearnMore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90rem;
+
+  margin: auto;
+  padding: 1.6rem 1.6rem 2.4rem 1.6rem;
+}
+
+.cardLearnMore img {
+  margin-bottom: 8px;
+}
+
+.cardLearnMore h2 {
+  margin-bottom: 1.6rem;
+}
+
+.cardLearnMore p, .cardLearnMore ul {
+  margin-bottom: 1.6rem;
+}
+
+.cardLearnMore ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 0rem 4rem;
+}
+
+.cardLearnMore .btnDefault {
+  background-color: var(--green-400);
+  font-size: 2rem;
+  text-transform: capitalize;
+  box-shadow: none;
+}
+
+.execicios {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+
+  color: var(--black-900);
+  padding: 1.6rem 1.6rem 0 1.6rem;
+}
+
+.execicios h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--purple-500);
+}
+
+.content-exercicios {
+  align-self: baseline;
+}
+
+.content-exercicios h4{
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+form {
+  margin-bottom: 3rem;
+}
+
+.content-exercicios fieldset {
+  margin-top: 2rem;
+  border: none;
+}
+
+.content-exercicios fieldset p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 1.6rem 0;
+}
+
+form .btnSubmit {
+  background-color: var(--pink-500);
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 1.2rem;
+  border: 1px solid var(--pink-900);
+  box-shadow: 0px 4px 0px var(--pink-900);
+}
+
+p.answer {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+p.answer.close {
+  display: none;
+}
+
+p.answer:nth-child(odd){
+  color: var(--purple-500);
+}
+
+p.answer:nth-child(even){
+  color: var(--green-600);
+}
+
+p.answer strong {
+  color: var(--black-900);
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+
+@media (min-width: 798px) {
+  
+  .cardLearnMore {
+    padding: 2.8rem 4rem 2.8rem 4rem;
+  }
+
+  .execicios {
+    max-width: 1280px;
+    padding: 4.8rem 4rem 0 4rem;
+    margin: auto;
+  }
+
+  .execicios h3 {
+    font-size: 3.2rem;
+  }
+
+  .content-exercicios h4{
+    font-size: 2.4rem;
+  }
+
+}

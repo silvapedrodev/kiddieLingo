@@ -79,4 +79,14 @@
     object-fit: contain;
   }
 
+ /* ---- Conteúdo secundário -----  */
+
+  section:not(:first-of-type) {
+    padding: 3.6rem 4rem 0rem 4rem;
+  }
+
+  .titleSection {
+    font-size: 3.6rem;
+  }
+
 }

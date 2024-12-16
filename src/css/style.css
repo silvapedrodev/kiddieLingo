@@ -11,6 +11,8 @@
   --font-default: "Fredoka", serif;
 
   /* Colors */
+  --black-900: #000000;
+
   --gray-0: #FFFFFF;
   --gray-50: #F5F5F5;
   --gray-100: #FAFAFA;
@@ -18,11 +20,15 @@
   --gray-300: #AEADB3;
   --gray-950: #020617;
   
-  
+  --purple-50: #EDE9FE;
   --purple-500: #583BBF;
   --purple-800: #260259;
   --purple-900: rgba(37, 25, 81, 0.20);
+
   --pink-500: #D96A93;
+  --pink-900: #8C455F;
+  --green-400: #3BBF8B;
+  --green-600: #84CC16;
 }
 
 
@@ -285,6 +291,11 @@ a {
   background-color: var(--purple-500);
 }
 
+section:not(:first-of-type) {
+  background-color: var(--gray-100);
+  padding: 2.4rem 1.6rem 0 1.6rem;
+}
+
 section:first-child {
   display: flex;
   flex-direction: column;
@@ -296,6 +307,7 @@ section:first-child {
   padding: 0 2.4rem;
 }
 
+/* ------- main principal de cada pagina -----  */
 .left-content {
   display: flex;
   flex-direction: column;
@@ -322,4 +334,20 @@ section:first-child {
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* ---- Conteúdo secundário -----  */
+
+.titleSection {
+  color: var(--purple-500);
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+/* ---- Componentes -----  */
+
+.card {
+  color: var(--black-900);
+  background-color: var(--purple-50);
+  border-radius: 8px;
 }
