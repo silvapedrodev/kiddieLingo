@@ -1,5 +1,5 @@
 import { setActiveLink, toggleNavStartButton  } from "./mobile-navbar.js"
-// import { pagesContent } from "../../data/pagesContent.json"
+import { loadExercises } from "./exercicios.js"
 
 export class Router {
   routes = {}
@@ -35,6 +35,11 @@ export class Router {
       this.updateAppContent(html)
       this.renderDynamicContent(path, pagesContent)
       this.updatePageCSS(route)
+      
+      if (path === "/to-be") {
+        loadExercises()
+      }
+
     } catch (error) {
       this.handleError(error)
     } finally {

@@ -1,0 +1,62 @@
+[
+  {
+    "text": "I ____ happy.",
+    "options": ["is", "are", "am"],
+    "answer": "am"
+  },
+  {
+    "text": "She ____ a doctor.",
+    "options": ["is", "are", "am"],
+    "answer": "is"
+  },
+  {
+    "text": "We ____ at school.",
+    "options": ["is", "are", "am"],
+    "answer": "are"
+  },
+  {
+    "text": "They ____ friends.",
+    "options": ["is", "are", "am"],
+    "answer": "are"
+  },
+  {
+    "text": "He ____ a teacher.",
+    "options": ["is", "are", "am"],
+    "answer": "is"
+  },
+  {
+    "text": "You ____ tired.",
+    "options": ["is", "are", "am"],
+    "answer": "are"
+  },
+  {
+    "text": "It ____ a cat.",
+    "options": ["is", "are", "am"],
+    "answer": "is"
+  },
+  {
+    "text": "I ____ learning English.",
+    "options": ["is", "are", "am"],
+    "answer": "am"
+  },
+  {
+    "text": "She ____ my best friend.",
+    "options": ["is", "are", "am"],
+    "answer": "is"
+  },
+  {
+    "text": "We ____ excited for the trip!",
+    "options": ["is", "are", "am"],
+    "answer": "are"
+  },
+  {
+    "text": "I ____ going to the store.",
+    "options": ["is", "are", "am"],
+    "answer": "am"
+  },
+  {
+    "text": "They ____ playing football.",
+    "options": ["is", "are", "am"],
+    "answer": "are"
+  }
+]
