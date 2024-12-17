@@ -95,9 +95,6 @@ form .btnSubmit {
   font-size: 2.4rem;
 }
 
-fieldset h2 {
-  font-size: 1.8rem;
-}
 
 p.answer {
   display: block;
@@ -123,6 +120,39 @@ p.answer strong {
   font-weight: normal;
 }
 
+#exercise-input-container p:not(.answer) {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 8px;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+#exercise-input-container p input{
+  display: inline-block;
+  background: none;
+  max-width: 5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  border: none;
+  border-bottom: 1px solid black;
+
+  padding: 0.4rem;
+}
+
+#exercise-input-container.answer {
+  display: block;
+}
+
+/* ----- Estilos das respostas ----  */
+.correct-answer {
+  color: var(--green-600);
+}
+
+.wrong-answer {
+  color: var(--red-500);
+}
+
 @media (min-width: 798px) {
   
   .cardLearnMore {
@@ -130,7 +160,7 @@ p.answer strong {
   }
 
   .execicios {
-    max-width: 1280px;
+    max-width: 100rem;
     padding: 4.8rem 4rem 0 4rem;
     margin: auto;
   }
