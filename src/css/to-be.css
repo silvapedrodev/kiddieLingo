@@ -140,6 +140,11 @@ p.answer strong {
   padding: 0.4rem;
 }
 
+#exercise-input-container p input:focus {
+  outline: 2px solid var(--pink-900);
+  border-radius: 4px;
+}
+
 #exercise-input-container.answer {
   display: block;
 }
