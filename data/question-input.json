@@ -1,0 +1,82 @@
+[
+  {
+    "type": "input",
+    "text": "I ____ from Brazil and my friend ____ from the USA.",
+    "answers": ["am", "are"]
+  },
+  {
+    "type": "input",
+    "text": "I ____ a student and my sister ____ a teacher.",
+    "answers": ["am", "is"]
+  },
+  {
+    "type": "input",
+    "text": "She ____ my best friend and he ____ my brother.",
+    "answers": ["is", "is"]
+  },
+  {
+    "type": "input",
+    "text": "You ____ very smart and I ____ happy to be your friend.",
+    "answers": ["are", "am"]
+  },
+  {
+    "type": "input",
+    "text": "My parents ____ doctors and I ____ a student.",
+    "answers": ["are", "am"]
+  },
+  {
+    "type": "input",
+    "text": "This ____ my house and that ____ your house.",
+    "answers": ["is", "is"]
+  },
+  {
+    "type": "input",
+    "text": "They ____ playing football and we ____ watching TV.",
+    "answers": ["are", "are"]
+  },
+  {
+    "type": "input",
+    "text": "He ____ very tall and she ____ very friendly.",
+    "answers": ["is", "is"]
+  },
+  {
+    "type": "input",
+    "text": "I ____ happy today and my brother ____ sad.",
+    "answers": ["am", "is"]
+  },
+  {
+    "type": "input",
+    "text": "We ____ at home and my friends ____ at the park.",
+    "answers": ["are", "are"]
+  },
+  {
+    "type": "input",
+    "text": "They ____ tired, but I ____ energetic.",
+    "answers": ["are", "am"]
+  },
+  {
+    "type": "input",
+    "text": "We ____ ready for the trip, and she ____ packing her bag.",
+    "answers": ["are", "is"]
+  },
+  {
+    "type": "input",
+    "text": "He ____ my best friend, and I ____ happy to see him.",
+    "answers": ["is", "am"]
+  },
+  {
+    "type": "input",
+    "text": "You ____ very kind, and they ____ very helpful.",
+    "answers": ["are", "are"]
+  },
+  {
+    "type": "input",
+    "text": "I ____ from Brazil, and she ____ from the USA.",
+    "answers": ["am", "is"]
+  },
+  {
+    "type": "input",
+    "text": "They ____ not at the party, and I ____ alone.",
+    "answers": ["are", "am"]
+  }
+]
