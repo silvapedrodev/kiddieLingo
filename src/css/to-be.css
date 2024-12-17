@@ -91,6 +91,14 @@ form .btnSubmit {
   box-shadow: 0px 4px 0px var(--pink-900);
 }
 
+.content-exercicios h4{
+  font-size: 2.4rem;
+}
+
+fieldset h2 {
+  font-size: 1.8rem;
+}
+
 p.answer {
   display: block;
   font-size: 2.4rem;

@@ -59,7 +59,7 @@ function renderExercicio(container, question, index) {
   const questionHTML = `
     <form class="question-form">
       <fieldset>
-        <h2>${index + 1}&#41; ${question.text}</h2>
+        <h2>${String.fromCharCode(97 + index)}&#41; ${question.text}</h2>
         ${shuffledOptions
           .map(
             (option, i) => `
@@ -103,7 +103,7 @@ function handleFormSubmit(event) {
   // Oculta as alternativas de resposta
   form.querySelectorAll("p").forEach((p) => {
     if (!p.classList.contains("answer")) {
-      p.style.display = "none";
+      p.style.display = "none"
     }
   })
 
