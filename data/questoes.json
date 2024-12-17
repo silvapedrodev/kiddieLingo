@@ -1,62 +1,234 @@
 [
   {
+    "type": "single", 
     "text": "I ____ happy.",
     "options": ["is", "are", "am"],
     "answer": "am"
   },
   {
+    "type": "single", 
     "text": "She ____ a doctor.",
     "options": ["is", "are", "am"],
     "answer": "is"
   },
   {
+    "type": "single", 
     "text": "We ____ at school.",
     "options": ["is", "are", "am"],
     "answer": "are"
   },
   {
+    "type": "single", 
     "text": "They ____ friends.",
     "options": ["is", "are", "am"],
     "answer": "are"
   },
   {
+    "type": "single", 
     "text": "He ____ a teacher.",
     "options": ["is", "are", "am"],
     "answer": "is"
   },
   {
+    "type": "single", 
     "text": "You ____ tired.",
     "options": ["is", "are", "am"],
     "answer": "are"
   },
   {
+    "type": "single", 
     "text": "It ____ a cat.",
     "options": ["is", "are", "am"],
     "answer": "is"
   },
   {
+    "type": "single", 
     "text": "I ____ learning English.",
     "options": ["is", "are", "am"],
     "answer": "am"
   },
   {
+    "type": "single", 
     "text": "She ____ my best friend.",
     "options": ["is", "are", "am"],
     "answer": "is"
   },
   {
+    "type": "single", 
     "text": "We ____ excited for the trip!",
     "options": ["is", "are", "am"],
     "answer": "are"
   },
   {
+    "type": "single", 
     "text": "I ____ going to the store.",
     "options": ["is", "are", "am"],
     "answer": "am"
   },
   {
+    "type": "single", 
     "text": "They ____ playing football.",
     "options": ["is", "are", "am"],
     "answer": "are"
+  },
+  {
+    "type": "pair",
+    "text": "I _____ from England and Erika _____ from Japan.",
+    "options": [
+      "is - am",
+      "are - is",
+      "am - is"
+    ],
+    "answer": "am - is"
+  },
+  {
+    "type": "pair",
+    "text": "They _____ at home and we _____ at school.",
+    "options": [
+      "are - is",
+      "are - are",
+      "is - are"
+    ],
+    "answer": "are - are"
+  },
+  {
+    "type": "pair",
+    "text": "I _____ from England and Erika _____ from Japan.",
+    "options": [
+      "is - am",
+      "are - is",
+      "am - is"
+    ],
+    "answer": "am - is"
+  },
+  {
+    "type":"pair",
+    "text": "My friend _____ a doctor and my brothers _____ lawyers.",
+    "options": [
+      "is - am",
+      "are - is",
+      "am - is"
+    ],
+    "answer": "is - are"
+  },
+  {
+    "type": "pair",
+    "text": "He _____ very tall and his sister _____ short.",
+    "options": [
+      "is - is",
+      "am - is",
+      "is - are"
+    ],
+    "answer": "is - is"
+  },
+  {
+    "type": "pair",
+    "text": "We _____ at the party and you _____ at home.",
+    "options": [
+      "are - is",
+      "are - are",
+      "is - are"
+    ],
+    "answer": "are - are"
+  },
+  {
+    "type": "pair",
+    "text": "I _____ from the USA and Ana _____ from Brazil.",
+    "options": [
+      "am - is",
+      "is - am",
+      "are - is"
+    ],
+    "answer": "am - is"
+  },
+  {
+    "type": "pair",
+    "text": "I _____ from Brazil and my friend _____ from Argentina.",
+    "options": [
+      "am - are",
+      "is - are",
+      "are - is"
+    ],
+    "answer": "am - is"
+  },
+  {
+    "type": "pair",
+    "text": "They _____ at home and we _____ at school.",
+    "options": [
+      "is - are",
+      "are - are",
+      "are - is"
+    ],
+    "answer": "are - are"
+  },
+  {
+    "type": "pair",
+    "text": "The dog _____ very friendly and the cat _____ very quiet.",
+    "options": [
+      "is - is",
+      "are - are",
+      "is - are"
+    ],
+    "answer": "is - is"
+  },
+  {
+    "type": "pair",
+    "text": "We _____ hungry and they _____ tired.",
+    "options": [
+      "is - are",
+      "are - are",
+      "am - are"
+    ],
+    "answer": "are - are"
+  },
+  {
+    "type": "pair",
+    "text": "You _____ a student and she _____ a teacher.",
+    "options": [
+      "am - is",
+      "are - is",
+      "is - are"
+    ],
+    "answer": "are - is"
+  },
+  {
+    "type": "pair",
+    "text": "The books _____ on the table and the pens _____ in the drawer.",
+    "options": [
+      "is - are",
+      "are - is",
+      "are - are"
+    ],
+    "answer": "are - are"
+  },
+  {
+    "type": "pair",
+    "text": "It _____ cold today and tomorrow it _____ hot.",
+    "options": [
+      "is - is",
+      "is - are",
+      "are - is"
+    ],
+    "answer": "is - is"
+  },
+  {
+    "type": "pair",
+    "text": "I _____ happy and my sister _____ sad.",
+    "options": [
+      "am - is",
+      "is - is",
+      "are - are"
+    ],
+    "answer": "am - is"
+  },
+  {
+    "type": "pair",
+    "text": "We _____ at the party and you _____ at home.",
+    "options": [
+      "are - is",
+      "are - are",
+      "is - are"
+    ],
+    "answer": "are - are"
   }
 ]

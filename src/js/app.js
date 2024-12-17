@@ -1,6 +1,6 @@
 import initializeMobileNav from "./mobile-navbar.js"
 import { Router } from "./router.js"
-import { loadExercises } from "./exercicios.js";
+import { loadExercises} from "./exercicios.js";
 
 const router = new Router()
 router.add(404, "/src/pages/404.html")
@@ -33,4 +33,4 @@ document.addEventListener("click", (event) => {
 // Executa a lógica dos exercícios ao carregar a página
 document.addEventListener("DOMContentLoaded", () => {
   loadExercises()
-});
+})
