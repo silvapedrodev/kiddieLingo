@@ -77,7 +77,7 @@ function renderExercicio(container, question, index) {
   `
     <form class="question-form">
       <fieldset>
-        <h2>${String.fromCharCode(97 + index)}&#41; ${question.text}</h2>
+        <h2 lang="en-us">${String.fromCharCode(97 + index)}&#41; ${question.text}</h2>
         ${shuffledOptions
           .map(
             (option, i) => `

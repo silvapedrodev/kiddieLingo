@@ -1,5 +1,5 @@
 import { setActiveLink, toggleNavStartButton  } from "./mobile-navbar.js"
-import { loadExercises} from "./exercicios.js"
+import { loadExercises} from "./exercises.js"
 
 export class Router {
   routes = {}
