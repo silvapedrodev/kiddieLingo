@@ -1,6 +1,8 @@
 /* --- Breakpoint para tablets e desktop ----- */
 
 @media screen and (min-width: 798px) {
+  
+
   nav {
     height: 100%;
     display: grid;
@@ -8,6 +10,8 @@
     gap: 4rem; 
     align-items: center; 
 
+    border-radius: 0 0rem 1.6rem 1.6rem;
+    box-shadow: 0 2px 8px var(--purple-900);
     padding: 2.5rem 4rem;
   }
 

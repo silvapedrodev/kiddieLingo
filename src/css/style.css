@@ -48,13 +48,12 @@ body {
 
 /* --------- Barra de Navegação --------  */
 header {
-  background-color: var(--gray-0);
-
-  border-radius: 0 0rem 0.8rem 0.8rem;
-  box-shadow: 0 2px 8px var(--purple-900);
+ background-color: var(--purple-500);
 }
 
 nav {
+  background-color: var(--gray-0);
+
   height: 8rem;
   padding: 1.6rem;
 
@@ -62,6 +61,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   margin: auto;
+
+  border-radius: 0 0rem 0.8rem 0.8rem;
+  box-shadow: 0 2px 8px var(--purple-900);
 }
 
 a {
