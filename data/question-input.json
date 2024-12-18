@@ -1,82 +1,142 @@
 [
   {
-    "type": "input",
+    "type": "affirmative",
     "text": "I ____ from Brazil and my friend ____ from the USA.",
     "answers": ["am", "are"]
   },
   {
-    "type": "input",
+    "type": "affirmative",
     "text": "I ____ a student and my sister ____ a teacher.",
     "answers": ["am", "is"]
   },
   {
-    "type": "input",
+    "type": "affirmative",
     "text": "She ____ my best friend and he ____ my brother.",
     "answers": ["is", "is"]
   },
   {
-    "type": "input",
+    "type": "affirmative",
     "text": "You ____ very smart and I ____ happy to be your friend.",
     "answers": ["are", "am"]
   },
   {
-    "type": "input",
+    "type": "affirmative",
     "text": "My parents ____ doctors and I ____ a student.",
     "answers": ["are", "am"]
   },
   {
-    "type": "input",
+    "type": "affirmative",
     "text": "This ____ my house and that ____ your house.",
     "answers": ["is", "is"]
   },
   {
-    "type": "input",
+    "type": "affirmative",
     "text": "They ____ playing football and we ____ watching TV.",
     "answers": ["are", "are"]
   },
   {
-    "type": "input",
+    "type": "affirmative",
     "text": "He ____ very tall and she ____ very friendly.",
     "answers": ["is", "is"]
   },
   {
-    "type": "input",
+    "type": "affirmative",
     "text": "I ____ happy today and my brother ____ sad.",
     "answers": ["am", "is"]
   },
   {
-    "type": "input",
+    "type": "affirmative",
     "text": "We ____ at home and my friends ____ at the park.",
     "answers": ["are", "are"]
   },
   {
-    "type": "input",
+    "type": "affirmative",
     "text": "They ____ tired, but I ____ energetic.",
     "answers": ["are", "am"]
   },
   {
-    "type": "input",
+    "type": "affirmative",
     "text": "We ____ ready for the trip, and she ____ packing her bag.",
     "answers": ["are", "is"]
   },
   {
-    "type": "input",
+    "type": "affirmative",
     "text": "He ____ my best friend, and I ____ happy to see him.",
     "answers": ["is", "am"]
   },
   {
-    "type": "input",
+    "type": "affirmative",
     "text": "You ____ very kind, and they ____ very helpful.",
     "answers": ["are", "are"]
   },
   {
-    "type": "input",
+    "type": "affirmative",
     "text": "I ____ from Brazil, and she ____ from the USA.",
     "answers": ["am", "is"]
   },
   {
-    "type": "input",
+    "type": "affirmative",
     "text": "They ____ not at the party, and I ____ alone.",
     "answers": ["are", "am"]
+  },
+  {
+    "type": "interrogative",
+    "text": "I am correct about it.",
+    "answers": ["Am I correct about it?"]
+  },
+  {
+    "type": "interrogative",
+    "text": "John is doing his homework.",
+    "answers": ["Is John doing his homework?"]
+  },
+  {
+    "type": "interrogative",
+    "text": "You are planning a trip.",
+    "answers": ["Are you planning a trip?"]
+  },
+  {
+    "type": "interrogative",
+    "text": "She is going to the movies with her friends.",
+    "answers": ["Is she going to the movies with her friends?"]
+  },
+  {
+    "type": "interrogative",
+    "text": "We are studying for the exam.",
+    "answers": ["Are we studying for the exam?"]
+  },
+  {
+    "type": "interrogative",
+    "text": "It is raining outside.",
+    "answers": ["Is it raining outside?"]
+  },
+  {
+    "type": "interrogative",
+    "text": "The dog is happy.",
+    "answers": ["Is the dog happy?"]
+  },
+  {
+    "type": "interrogative",
+    "text": "She is playing.",
+    "answers": ["Is she playing?"]
+  },
+  {
+    "type": "interrogative",
+    "text": "You are my friend.",
+    "answers": ["Are you my friend?"]
+  },
+  {
+    "type": "interrogative",
+    "text": "He is at school.",
+    "answers": ["Is he at school?"]
+  },
+  {
+    "type": "interrogative",
+    "text": "They are going to the park.",
+    "answers": ["Are they going to the park?"]
+  },
+  {
+    "type": "interrogative",
+    "text": "The cellphone is brand new.",
+    "answers": ["Is the cellphone brand new?"]
   }
 ]

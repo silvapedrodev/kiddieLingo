@@ -97,20 +97,44 @@ function loadInputExercises(inputContainer) {
         throw new Error("Nenhuma questão de input encontrada no JSON.");
       }
 
-      inputQuestions = shuffleArray(inputQuestions).slice(0, 10);
+      // Defina quantas questões afirmativas e interrogativas você deseja
+      const numAffirmativeQuestions = 10; 
+      const numInterrogativeQuestions = 10; 
 
-      inputQuestions.forEach((question, index) => {
-        renderInputExercise(inputContainer, question, index);
+      // Filtra as questões afirmativas e interrogativas
+      const affirmativeQuestions = inputQuestions.filter(q => q.type === "affirmative");
+      const interrogativeQuestions = inputQuestions.filter(q => q.type === "interrogative");
+
+      // Embaralha as questões
+      const shuffledAffirmativeQuestions = shuffleArray(affirmativeQuestions).slice(0, numAffirmativeQuestions);
+      const shuffledInterrogativeQuestions = shuffleArray(interrogativeQuestions).slice(0, numInterrogativeQuestions);
+
+      // Combina as questões selecionadas
+      const selectedQuestions = [
+        ...shuffledAffirmativeQuestions,
+        ...shuffledInterrogativeQuestions
+      ];
+
+      // Renderiza as questões no contêiner correto
+      selectedQuestions.forEach((question, index) => {
+        // Se a questão for afirmativa, renderiza no container afirmativo
+        if (question.type === "affirmative") {
+          renderInputExercise(inputContainer, question, index);
+        } else if (question.type === "interrogative") {
+          // Se a questão for interrogativa, renderiza no container interrogativo
+          const interrogativeContainer = document.querySelector("#exercise-interrogative-container");
+          renderInterrogativeExercise(interrogativeContainer, question, index);
+        }
       });
 
-      // Mudança principal está aqui ↓
+      // Adiciona o evento de submit para as questões de input
       inputContainer.addEventListener("submit", (event) => {
         event.preventDefault();
         
         // Encontra a questão correspondente ao formulário submetido
         const form = event.target;
         const formIndex = Array.from(inputContainer.querySelectorAll('form')).indexOf(form);
-        const correspondingQuestion = inputQuestions[formIndex];
+        const correspondingQuestion = selectedQuestions[formIndex];
         
         // Passa as respostas corretas para a função
         handleInputSubmit(event, correspondingQuestion.answers);
@@ -135,10 +159,10 @@ function renderExercicio(container, question, index) {
         `
           )
           .join("")}
-        <p class="answer close">
+        <p class="answer sua-resposta close">
           Sua resposta: <strong></strong>
         </p>
-        <p class="answer close">
+        <p class="answer resposta-correta close">
           Resposta correta: <strong>${question.answer}</strong>
         </p>
       </fieldset>
@@ -163,10 +187,10 @@ function renderInputExercise(container, question, index) {
           <input type="text" id="input02-${index}" class="answer-input" maxlength="3">
           ${parts[2] || ''}
         </p>
-        <p class="answer close">
+        <p class="answer sua-resposta close">
           Sua resposta: <strong></strong>
         </p>
-        <p class="answer close">
+        <p class="answer resposta-correta  close">
           Resposta correta: <strong>${question.answers.join(" e ")}</strong>
         </p>
       </fieldset>
@@ -177,6 +201,36 @@ function renderInputExercise(container, question, index) {
 
   // Configura restrições para os inputs recém-criados
   formatInputValidation(".answer-input");
+}
+
+function renderInterrogativeExercise(container, question, index) {
+  
+  const questionHTML = `
+    <form class="question-form">
+      <fieldset>
+        <h2 lang="en-us">${String.fromCharCode(97 + index)}&#41; ${question.text}</h2>
+        <p>
+          <label for="input01-${index}"></label>
+          <input type="text" id="input01-${index}" class="answer-input">
+        </p>
+        <p class="answer sua-resposta close">
+          Sua resposta: <strong></strong>
+        </p>
+        <p class="answer resposta-correta close">
+          Resposta correta: <strong>${question.answers.join(" e ")}</strong>
+        </p>
+      </fieldset>
+      <input type="submit" class="btnDefault btnSubmit" value="Verificar">
+    </form>
+  `;
+  container.insertAdjacentHTML("beforeend", questionHTML);
+
+  const form = container.querySelector(`form:last-child`);
+  
+  form.addEventListener("submit", (event) => {
+    event.preventDefault(); // Previne o recarregamento da página
+    handleInputSubmit(event, question.answers); // Chama a função para validar a resposta
+  });
 }
 
 function handleMultipleChoiceSubmit(event) {
@@ -233,9 +287,6 @@ function handleInputSubmit(event, correctAnswers) {
     inputs.forEach((input, index) => {
       const userAnswer = input.value.trim()
       const correctAnswer = processedCorrectAnswers[index]
-
-      // Remove classes anteriores
-      input.classList.remove("correct-answer", "wrong-answer")
 
       // Adiciona a classe correta baseado na comparação
       if (userAnswer === correctAnswer) {
