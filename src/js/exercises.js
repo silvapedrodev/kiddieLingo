@@ -157,10 +157,10 @@ function renderInputExercise(container, question, index) {
         <p lang="en-us">${String.fromCharCode(97 + index)}&#41;
           ${parts[0]}
           <label for="input01-${index}"></label>
-          <input type="text" id="input01-${index}" class="answer-input" />
+          <input type="text" id="input01-${index}" class="answer-input" maxlength="3">
           ${parts[1]}
           <label for="input02-${index}"></label>
-          <input type="text" id="input02-${index}" class="answer-input" />
+          <input type="text" id="input02-${index}" class="answer-input" maxlength="3">
           ${parts[2] || ''}
         </p>
         <p class="answer close">
@@ -174,6 +174,9 @@ function renderInputExercise(container, question, index) {
     </form>
   `;
   container.insertAdjacentHTML("beforeend", questionHTML);
+
+  // Configura restrições para os inputs recém-criados
+  formatInputValidation(".answer-input");
 }
 
 function handleMultipleChoiceSubmit(event) {
@@ -182,16 +185,16 @@ function handleMultipleChoiceSubmit(event) {
   const correctAnswer = form.querySelector(".answer strong:last-child").textContent.trim();
 
   if (selectedOption) {
-    const userAnswer = selectedOption.value.trim().toLowerCase();
-    const answerElement = form.querySelector(".answer strong");
-    answerElement.textContent = userAnswer;
+    const userAnswer = selectedOption.value.trim() 
+    const answerElement = form.querySelector(".answer strong")
+    answerElement.textContent = userAnswer
 
-    if (userAnswer === correctAnswer.toLowerCase()) {
-      selectedOption.classList.add("correct-answer");
-      selectedOption.classList.remove("wrong-answer");
+    if (userAnswer === correctAnswer) {
+      selectedOption.classList.add("correct-answer")
+      selectedOption.classList.remove("wrong-answer")
     } else {
-      selectedOption.classList.add("wrong-answer");
-      selectedOption.classList.remove("correct-answer");
+      selectedOption.classList.add("wrong-answer")
+      selectedOption.classList.remove("correct-answer")
     }
   }
 
@@ -220,7 +223,7 @@ function handleInputSubmit(event, correctAnswers) {
 
   // Processando respostas corretas
   const processedCorrectAnswers = correctAnswers
-    .map(answer => answer.trim().toLowerCase())
+    .map(answer => answer.trim())
 
   if (inputs.length > 0) {
     const userAnswerElement = form.querySelector(".answer strong:first-child")
@@ -228,7 +231,7 @@ function handleInputSubmit(event, correctAnswers) {
 
     // Verifica cada resposta do usuário
     inputs.forEach((input, index) => {
-      const userAnswer = input.value.trim().toLowerCase()
+      const userAnswer = input.value.trim()
       const correctAnswer = processedCorrectAnswers[index]
 
       // Remove classes anteriores
@@ -262,6 +265,15 @@ function handleInputSubmit(event, correctAnswers) {
 
   // Esconde o botão de "Verificar"
   form.querySelector(".btnSubmit").style.display = "none"
+}
+
+function formatInputValidation(inputSelector) {
+  document.querySelectorAll(inputSelector).forEach((input) => {
+    input.addEventListener("input", () => {
+      // Remove caracteres não alfabéticos e transforma em minúsculas
+      input.value = input.value.replace(/[^a-z]/gi, "").toLowerCase()
+    })
+  })
 }
 
 // Função utilitária para embaralhar um array
