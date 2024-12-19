@@ -116,14 +116,15 @@ function loadInputExercises(inputContainer) {
       ];
 
       // Renderiza as questões no contêiner correto
-      selectedQuestions.forEach((question, index) => {
-        // Se a questão for afirmativa, renderiza no container afirmativo
+      let affirmativeIndex = 0;
+      let interrogativeIndex = 0;
+
+      selectedQuestions.forEach((question) => {
         if (question.type === "affirmative") {
-          renderInputExercise(inputContainer, question, index);
+          renderInputExercise(inputContainer, question, affirmativeIndex++);
         } else if (question.type === "interrogative") {
-          // Se a questão for interrogativa, renderiza no container interrogativo
           const interrogativeContainer = document.querySelector("#exercise-interrogative-container");
-          renderInterrogativeExercise(interrogativeContainer, question, index);
+          renderInterrogativeExercise(interrogativeContainer, question, interrogativeIndex++);
         }
       });
 
