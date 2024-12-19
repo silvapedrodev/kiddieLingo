@@ -1,151 +1,122 @@
+// Refatoração completa do código
+
 export function loadExercises() {
-  // Espera ambos os contêineres estarem disponíveis no DOM
   Promise.all([
-    waitForElement("#exercise-container"), // Contêiner para questões únicas
-    waitForElement("#exercise-pair-container"), // Contêiner para questões pares
-    waitForElement("#exercise-input-container") // Contêiner para questões de input
-  ]).then(([singleContainer, pairContainer, inputContainer]) => {
-    // Verifica se já foram carregadas questões nesses contêineres
-    if (
-      singleContainer.dataset.loaded === "true" &&
-      pairContainer.dataset.loaded === "true" &&
-      inputContainer.dataset.loaded === "true"
-    ) {
-      return; // Não carrega novamente as questões
+    waitForElement("#exercise-container"),
+    waitForElement("#exercise-pair-container"),
+    waitForElement("#exercise-input-container"),
+    waitForElement("#exercise-interrogative-container"),
+  ]).then(([singleContainer, pairContainer, inputContainer, interrogativeContainer]) => {
+    if (areContainersLoaded([singleContainer, pairContainer, inputContainer, interrogativeContainer])) {
+      return
     }
 
-    // Marca os contêineres como carregados para evitar duplicação
-    singleContainer.dataset.loaded = "true";
-    pairContainer.dataset.loaded = "true";
-    inputContainer.dataset.loaded = "true";
+    markContainersAsLoaded([singleContainer, pairContainer, inputContainer, interrogativeContainer])
 
-    // Carregar questões para múltipla escolha (single) e pares (pair)
-    fetch("../../data/questoes.json")
-      .then((response) => {
-        if (!response.ok)
-          throw new Error(`Falha ao carregar questões: ${response.statusText}`);
-        return response.json();
+    // Carregar questões de múltipla escolha
+    fetchQuestions("../../data/questoes.json")
+      .then((questions) => {
+        const { singleQuestions, pairQuestions } = separateQuestionsByType(questions, "single", "pair")
+        renderQuestions(singleQuestions, singleContainer, renderSingleChoiceQuestion)
+        renderQuestions(pairQuestions, pairContainer, renderPairQuestion)
+        addSubmitListeners([singleContainer, pairContainer], handleMultipleChoiceSubmit)
       })
-      .then((questoes) => {
-        if (!Array.isArray(questoes) || questoes.length === 0) {
-          throw new Error("Nenhuma questão encontrada no JSON.");
-        }
-
-        // Separa as questões por tipo
-        const singleQuestions = questoes.filter((q) => q.type === "single")
-        const pairQuestions = questoes.filter((q) => q.type === "pair")
-
-        // Seleciona até 8 questões de cada tipo
-        const selectedSingleQuestions = shuffleArray(singleQuestions).slice(0, 8)
-        const selectedPairQuestions = shuffleArray(pairQuestions).slice(0, 8);
-
-        // Embaralha todas as questões selecionadas para garantir aleatoriedade
-        const allQuestions = shuffleArray([
-          ...selectedSingleQuestions,
-          ...selectedPairQuestions,
-        ]);
-
-        // Renderiza as questões nos contêineres apropriados
-        let singleIndex = 0;
-        let pairIndex = 0;
-
-        allQuestions.forEach((question) => {
-          if (question.type === "single") {
-            renderExercicio(singleContainer, question, singleIndex++);
-          } else if (question.type === "pair") {
-            renderExercicio(pairContainer, question, pairIndex++);
-          }
-        });
-
-        // Adiciona ouvintes de evento aos dois contêineres
-        [singleContainer, pairContainer].forEach((container) => {
-          container.addEventListener("submit", (event) => {
-            event.preventDefault();
-            handleMultipleChoiceSubmit(event);
-          });
-        });
-      })
-      .catch((error) => console.error("Erro ao carregar questões:", error));
+      .catch((error) => console.error("Erro ao carregar exercícios:", error))
 
     // Carregar questões de input
-    loadInputExercises(inputContainer);
-  });
-}
+    fetchQuestions("../../data/question-input.json")
+      .then((inputQuestions) => {
+        const { affirmativeQuestions, interrogativeQuestions } = separateQuestionsByType(
+          inputQuestions,
+          "affirmative",
+          "interrogative"
+        );
 
-// Função para esperar o contêiner estar disponível no DOM
-function waitForElement(selector) {
-  return new Promise((resolve, reject) => {
-    const checkExist = setInterval(() => {
-      const element = document.querySelector(selector);
-      if (element) {
-        clearInterval(checkExist);
-        resolve(element); // O contêiner foi encontrado, podemos continuar
-      }
-    }, 200); // Verifica a cada 200ms
-  });
-}
-
-function loadInputExercises(inputContainer) {
-  fetch("../../data/question-input.json")
-    .then((response) => {
-      if (!response.ok)
-        throw new Error(`Falha ao carregar questões de input: ${response.statusText}`);
-      return response.json();
-    })
-    .then((inputQuestions) => {
-      if (!Array.isArray(inputQuestions) || inputQuestions.length === 0) {
-        throw new Error("Nenhuma questão de input encontrada no JSON.");
-      }
-
-      // Defina quantas questões afirmativas e interrogativas você deseja
-      const numAffirmativeQuestions = 10; 
-      const numInterrogativeQuestions = 10; 
-
-      // Filtra as questões afirmativas e interrogativas
-      const affirmativeQuestions = inputQuestions.filter(q => q.type === "affirmative");
-      const interrogativeQuestions = inputQuestions.filter(q => q.type === "interrogative");
-
-      // Embaralha as questões
-      const shuffledAffirmativeQuestions = shuffleArray(affirmativeQuestions).slice(0, numAffirmativeQuestions);
-      const shuffledInterrogativeQuestions = shuffleArray(interrogativeQuestions).slice(0, numInterrogativeQuestions);
-
-      // Combina as questões selecionadas
-      const selectedQuestions = [
-        ...shuffledAffirmativeQuestions,
-        ...shuffledInterrogativeQuestions
-      ];
-
-      // Renderiza as questões no contêiner correto
-      let affirmativeIndex = 0;
-      let interrogativeIndex = 0;
-
-      selectedQuestions.forEach((question) => {
-        if (question.type === "affirmative") {
-          renderInputExercise(inputContainer, question, affirmativeIndex++);
-        } else if (question.type === "interrogative") {
-          const interrogativeContainer = document.querySelector("#exercise-interrogative-container");
-          renderInterrogativeExercise(interrogativeContainer, question, interrogativeIndex++);
+        if (affirmativeQuestions.length > 0) {
+          renderQuestions(affirmativeQuestions, inputContainer, renderInputExercise)
+        } else {
+          console.warn("Nenhuma questão afirmativa encontrada.")
         }
-      });
 
-      // Adiciona o evento de submit para as questões de input
-      inputContainer.addEventListener("submit", (event) => {
-        event.preventDefault();
-        
-        // Encontra a questão correspondente ao formulário submetido
-        const form = event.target;
-        const formIndex = Array.from(inputContainer.querySelectorAll('form')).indexOf(form);
-        const correspondingQuestion = selectedQuestions[formIndex];
-        
-        // Passa as respostas corretas para a função
-        handleInputSubmit(event, correspondingQuestion.answers);
-      });
-    })
-    .catch((error) => console.error("Erro ao carregar questões de input:", error));
+        if (interrogativeQuestions.length > 0) {
+          renderQuestions(interrogativeQuestions, interrogativeContainer, renderInterrogativeExercise)
+        } else {
+          console.warn("Nenhuma questão interrogativa encontrada.")
+        }
+
+        addSubmitListeners([inputContainer, interrogativeContainer], handleInputSubmit)
+      })
+      .catch((error) => console.error("Erro ao carregar questões de input:", error))
+  })
 }
 
-function renderExercicio(container, question, index) {
-  const shuffledOptions = shuffleArray(question.options); // Embaralha as opções
+function waitForElement(selector) {
+  return new Promise((resolve) => {
+    const interval = setInterval(() => {
+      const element = document.querySelector(selector)
+      if (element) {
+        clearInterval(interval)
+        resolve(element) // O contêiner foi encontrado, podemos continuar
+      }
+    }, 200) // Verifica a cada 200ms
+  });
+}
+
+function fetchQuestions(url) {
+  return fetch(url)
+    .then((response) => {
+      if (!response.ok) throw new Error(`Falha ao carregar questões: ${response.statusText}`)
+      return response.json()
+    })
+    .then((questions) => {
+      if (!Array.isArray(questions) || questions.length === 0) {
+        throw new Error("Nenhuma questão encontrada no JSON.")
+      }
+      return questions
+    })
+}
+
+function separateQuestionsByType(questions, type1, type2) {
+  if (!Array.isArray(questions)) {
+    console.error("Formato inválido de questões. Certifique-se de que o JSON contém um array.")
+    return { [`${type1}Questions`]: [], [`${type2}Questions`]: [] }
+  }
+
+  const type1Questions = shuffleArray(questions.filter((q) => q.type === type1))
+  const type2Questions = shuffleArray(questions.filter((q) => q.type === type2))
+
+  // Imprime no console a quantidade de questões de cada tipo
+  // console.log(`Questões do tipo "${type1}":`, type1Questions)
+  // console.log(`Questões do tipo "${type2}":`, type2Questions)
+
+  return {
+    [`${type1}Questions`]: type1Questions.slice(0, 8),
+    [`${type2}Questions`]: type2Questions.slice(0, 10),
+  }
+}
+
+function areContainersLoaded(containers) {
+  return containers.every((container) => container.dataset.loaded === "true")
+}
+
+function markContainersAsLoaded(containers) {
+  containers.forEach((container) => (container.dataset.loaded = "true"))
+}
+
+function renderQuestions(questions, container, renderFunction) {
+  if (!Array.isArray(questions) || questions.length === 0) {
+    console.warn(`Nenhuma questão para renderizar no container: ${container.id}`)
+    return
+  }
+  
+  // Remove a linha que salvava no dataset
+  // container.dataset.questions = JSON.stringify(questions)
+
+  questions.forEach((question, index) => renderFunction(container, question, index))
+}
+
+function renderSingleChoiceQuestion(container, question, index) {
+  const shuffledOptions = shuffleArray(question.options)
   const questionHTML = `
     <form class="question-form">
       <fieldset>
@@ -169,13 +140,19 @@ function renderExercicio(container, question, index) {
       </fieldset>
       <input type="submit" class="btnDefault btnSubmit" value="Verificar">
     </form>
-  `;
-  container.insertAdjacentHTML("beforeend", questionHTML);
+  `
+
+  container.insertAdjacentHTML("beforeend", questionHTML)
+}
+
+function renderPairQuestion(container, question, index) {
+  renderSingleChoiceQuestion(container, question, index)
 }
 
 function renderInputExercise(container, question, index) {
-  const parts = question.text.split('____');
-  
+  const parts = question.text.split("____")
+
+  // Adicionando dois inputs em uma única pergunta
   const questionHTML = `
     <form class="question-form">
       <fieldset>
@@ -183,29 +160,28 @@ function renderInputExercise(container, question, index) {
           ${parts[0]}
           <label for="input01-${index}"></label>
           <input type="text" id="input01-${index}" class="answer-input" maxlength="3">
-          ${parts[1]}
+          ${parts[1] || ""}
           <label for="input02-${index}"></label>
           <input type="text" id="input02-${index}" class="answer-input" maxlength="3">
-          ${parts[2] || ''}
+          ${parts[2] || ""}
         </p>
+        
         <p class="answer sua-resposta close">
           Sua resposta: <strong></strong>
         </p>
-        <p class="answer resposta-correta  close">
+        <p class="answer resposta-correta close">
           Resposta correta: <strong>${question.answers.join(" e ")}</strong>
         </p>
       </fieldset>
       <input type="submit" class="btnDefault btnSubmit" value="Verificar">
     </form>
-  `;
-  container.insertAdjacentHTML("beforeend", questionHTML);
+  `
+  container.insertAdjacentHTML("beforeend", questionHTML)
 
-  // Configura restrições para os inputs recém-criados
-  formatInputValidation(".answer-input");
+  formatInputValidation(".answer-input")
 }
 
 function renderInterrogativeExercise(container, question, index) {
-  
   const questionHTML = `
     <form class="question-form">
       <fieldset>
@@ -223,99 +199,87 @@ function renderInterrogativeExercise(container, question, index) {
       </fieldset>
       <input type="submit" class="btnDefault btnSubmit" value="Verificar">
     </form>
-  `;
-  container.insertAdjacentHTML("beforeend", questionHTML);
+  `
 
-  const form = container.querySelector(`form:last-child`);
-  
-  form.addEventListener("submit", (event) => {
-    event.preventDefault(); // Previne o recarregamento da página
-    handleInputSubmit(event, question.answers); // Chama a função para validar a resposta
-  });
+  container.insertAdjacentHTML("beforeend", questionHTML)
 }
 
-function handleMultipleChoiceSubmit(event) {
-  const form = event.target;
-  const selectedOption = form.querySelector("input[type='radio']:checked");
-  const correctAnswer = form.querySelector(".answer strong:last-child").textContent.trim();
+function addSubmitListeners(containers, submitHandler) {
+  containers.forEach((container) => {
+    container.addEventListener("submit", (event) => {
+      event.preventDefault()
+      const form = event.target
+      const forms = container.querySelectorAll("form")
+      const questionIndex = Array.from(forms).indexOf(form)
+      
+      // Recria o objeto question baseado nos elementos do form
+      const question = {
+        text: form.querySelector("h2, p")?.textContent,
+        answer: form.querySelector(".resposta-correta strong")?.textContent,
+        answers: form.querySelector(".resposta-correta strong")?.textContent.split(" e ") || []
+      }
+
+      submitHandler(event, question)
+    })
+  })
+}
+
+function handleInputSubmit(event, question) {
+  const form = event.target
+  const inputs = form.querySelectorAll("input.answer-input")
+
+  const userAnswers = Array.from(inputs).map((input) => input.value.trim())
+  const correctAnswers = question.answers
+  const correctAnswerElement = form.querySelector(".answer.resposta-correta strong")
+
+  correctAnswerElement.textContent = correctAnswers.join(" e ")
+
+  inputs.forEach((input, index) => {
+    if (userAnswers[index] === correctAnswers[index]) {
+      input.classList.add("correct-answer")
+    } else {
+      input.classList.add("wrong-answer")
+    }
+  })
+
+  form.querySelector(".answer.sua-resposta strong").textContent = userAnswers.join(" e ")
+
+  form.querySelectorAll(".answer").forEach((answer) => {
+    answer.style.display = "block"
+  })
+
+  form.querySelectorAll("input").forEach((input) => {
+    input.disabled = true
+  })
+
+  form.querySelector(".btnSubmit").style.display = "none"
+}
+
+function handleMultipleChoiceSubmit(event, question) {
+  const form = event.target
+  const selectedOption = form.querySelector("input[type='radio']:checked")
+  const correctAnswer = question.answer
 
   if (selectedOption) {
-    const userAnswer = selectedOption.value.trim() 
-    const answerElement = form.querySelector(".answer strong")
+    const userAnswer = selectedOption.value.trim()
+    const answerElement = form.querySelector(".answer.sua-resposta strong")
     answerElement.textContent = userAnswer
 
     if (userAnswer === correctAnswer) {
       selectedOption.classList.add("correct-answer")
-      selectedOption.classList.remove("wrong-answer")
     } else {
       selectedOption.classList.add("wrong-answer")
-      selectedOption.classList.remove("correct-answer")
     }
   }
 
-  // Exibe as respostas
-  form.querySelectorAll(".answer").forEach((answer) => {
-    answer.style.display = "block";
-  });
-
-  // Desativa os inputs para evitar novas submissões
-  form.querySelectorAll("input").forEach((input) => {
-    input.disabled = true;
-  });
-
-  form.querySelector(".btnSubmit").style.display = "none";
-}
-
-function handleInputSubmit(event, correctAnswers) {
-  const form = event.target
-  const inputs = form.querySelectorAll("input.answer-input")
-
-  // Verifica se correctAnswers foi passado
-  if (!correctAnswers) {
-    console.error("Respostas corretas não fornecidas!")
-    return
-  }
-
-  // Processando respostas corretas
-  const processedCorrectAnswers = correctAnswers
-    .map(answer => answer.trim())
-
-  if (inputs.length > 0) {
-    const userAnswerElement = form.querySelector(".answer strong:first-child")
-    const userAnswers = Array.from(inputs).map(input => input.value.trim())
-
-    // Verifica cada resposta do usuário
-    inputs.forEach((input, index) => {
-      const userAnswer = input.value.trim()
-      const correctAnswer = processedCorrectAnswers[index]
-
-      // Adiciona a classe correta baseado na comparação
-      if (userAnswer === correctAnswer) {
-        input.classList.add("correct-answer")
-      } else {
-        input.classList.add("wrong-answer")
-      }
-    })
-
-    // Atualiza as respostas corretas 
-    const correctAnswerElement = form.querySelector(".answer strong:last-child")
-    correctAnswerElement.textContent = processedCorrectAnswers.join(" e ")
-    
-    // Exibe as respostas do usuário no primeiro <strong>
-    userAnswerElement.textContent = userAnswers.join(" e ")
-  }
-
-  // Exibe as respostas
   form.querySelectorAll(".answer").forEach((answer) => {
     answer.style.display = "block"
-  });
+  })
 
-  // Desativa os inputs para evitar novas submissões
   form.querySelectorAll("input").forEach((input) => {
     input.disabled = true
-  });
+  })
 
-  // Esconde o botão de "Verificar"
   form.querySelector(".btnSubmit").style.display = "none"
 }
 
@@ -328,10 +292,9 @@ function formatInputValidation(inputSelector) {
   })
 }
 
-// Função utilitária para embaralhar um array
 function shuffleArray(array) {
   return array
     .map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value);
+    .map(({ value }) => value)
 }
