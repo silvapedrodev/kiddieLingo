@@ -24,6 +24,66 @@
   .right-content {
     margin-top: 8rem;
   }
+
+  .main-content {
+    background-color: var(--gray-100);
+    margin-top: 2.4rem;
+  }
+
+  .main-content > h2 {
+    color: var(--purple-500);
+    text-align: center;
+    margin-top: 2.8rem;
+  }
+
+  .card-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    background-color: var(--purple-50);
+    border-radius: 1.6rem;
+    margin-top: 2.4rem;
+
+    padding: 1.6rem 2rem 2.4rem 2rem;
+  }
+
+  .card-group > h2 {
+    color: var(--purple-850);
+    align-self: baseline;
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--purple-100);
+    padding: 2rem;
+    width: 90%;
+    height: 18rem;
+    margin: auto;
+  }
+
+  .card img {
+    width: 60%;
+  }
+
+  .card h3 {
+    font-weight: 600;
+    color: var(--black-900);
+    margin-top: 8px;
+  }
+
+  .card p {
+    color: var(--gray-400);
+  }
+
 }
 
 @media screen and (min-width: 798px) {
@@ -44,4 +104,59 @@
   .btnStartMain {
     display: none;
   }
+
+  .main-content {
+    color: var(--black-900);
+  }
+
+  .main-content > h2 {
+    font-size: 3.2rem;
+    color: var(--purple-500);
+    text-align: center;
+    margin-bottom: 3.6rem;
+  }
+
+  .card-group {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--purple-50);
+    max-width: 120rem;
+    border-radius: 1.6rem;
+    padding: 3rem 2rem 3rem 2rem;
+
+    margin: auto;
+  }
+
+  .card-group > h2 {
+    font-size: 2.8rem;
+    color: var(--purple-850);
+    margin-bottom: 4rem;
+  }
+
+  .card-container {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--purple-100);
+    width: 25rem;
+    height: 24rem;
+
+    margin: auto;
+  }
+
+  .card img {
+    width: 7rem;
+  }
+
+  .card h3 {
+    margin-top: 1.8rem;
+  }
+
 }
