@@ -122,7 +122,7 @@ export class Router {
         }
       </div>
       <div class="right-content">
-        <img src="${data.imgSrc}" alt="${data.imgAlt}">
+        <img src="${data.imgSrc}" width="436px" height="392" alt="${data.imgAlt}">
       </div>
     </section>
     `
