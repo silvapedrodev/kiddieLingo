@@ -19,6 +19,7 @@
   --gray-200: #EAEAEA;
   --gray-300: #AEADB3;
   --gray-400: #A8A29E;
+  --gray-500: #71717A;
   --gray-950: #020617;
   
   --purple-50: #EDE9FE;
@@ -308,7 +309,6 @@ section:first-child {
   gap: 2.4rem;
 
   background-color: var(--purple-500);
-
   padding: 0 2.4rem;
 }
 
@@ -342,6 +342,7 @@ section:first-child {
   aspect-ratio: 272 / 245;
   height: auto;
   object-fit: cover;
+  margin: auto;
 }
 
 /* ---- Conteúdo secundário -----  */
@@ -358,4 +359,10 @@ section:first-child {
   color: var(--black-900);
   background-color: var(--purple-50);
   border-radius: 8px;
+}
+
+
+/* ------- footer -------  */
+footer {
+  background-color: var(--purple-500);
 }
