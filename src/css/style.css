@@ -387,7 +387,7 @@ footer h2 {
 
 footer p {
   color: var(--gray-250);
-  font-weight: 300;
+  font-weight: normal;
   margin-top: 4px;
   opacity: 90%;
 }
