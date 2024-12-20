@@ -122,7 +122,7 @@ export class Router {
         }
       </div>
       <div class="right-content">
-        <img src="${data.imgSrc}" width="272px" height="245px" alt="${data.imgAlt}">
+        <img rel="preload" src="${data.imgSrc}" width="272px" height="245px" alt="${data.imgAlt}">
       </div>
     </section>
     `
