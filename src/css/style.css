@@ -17,6 +17,7 @@
   --gray-50: #F5F5F5;
   --gray-100: #FAFAFA;
   --gray-200: #EAEAEA;
+  --gray-250: #E0E0E0;
   --gray-300: #AEADB3;
   --gray-400: #A8A29E;
   --gray-500: #71717A;
@@ -362,7 +363,64 @@ section:first-child {
 }
 
 
+
+
 /* ------- footer -------  */
 footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
   background-color: var(--purple-500);
+  color: var(--gray-0);
+
+  margin-top: 8.4rem;
+}
+
+footer div {
+  padding: 1.6rem;
+}
+
+footer h2 {
+  font-weight: 500;
+}
+
+footer p {
+  color: var(--gray-250);
+  font-weight: 300;
+  margin-top: 4px;
+  opacity: 90%;
+}
+
+.contact img:hover {
+  transform: scale(1.2);
+}
+
+.contact img{
+  padding-block: 1.6rem;
+  width: 4rem;
+}
+
+.contact img:nth-child(1){
+  margin-right: 6px;
+}
+
+footer hr {
+  width: 100%;
+  background-color: var(--gray-0);
+}
+
+footer .copyright {
+  text-align: center;
+  padding: 2rem;
+}
+
+footer .copyright p:first-child {
+  font-size: 1.8rem;
+  color: var(--gray-0);
+  opacity: 100%;
+}
+
+footer .copyright p:last-child {
+  font-size: 1.4rem;
 }

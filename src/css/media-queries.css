@@ -93,4 +93,43 @@
     font-size: 3.6rem;
   }
 
+  /* ------- footer -------  */
+
+  footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    grid-gap: 1.6rem; 
+    width: 100%; 
+
+    margin-top: 11.2rem;
+  }
+  
+  footer div {
+    padding: 3.6rem 10rem;
+  }
+  
+  footer .about {
+    grid-column: 1; 
+  }
+  
+  footer .thanks {
+    grid-column: 2; 
+  }
+  
+  footer .contact {
+    justify-self: baseline;
+  }
+  
+  footer hr {
+    grid-column: 1 / -1; /* Faz com que o <hr> ocupe toda a largura */
+  }
+  
+  footer .copyright {
+    grid-column: 1 / -1; /* A .copyright ocupa toda a largura da linha abaixo */
+    padding: 1rem;
+    text-align: center; /* Centraliza o texto dentro da div copyright */
+  }
+
 }
