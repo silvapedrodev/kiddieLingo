@@ -24,6 +24,11 @@ window.route = (event) => router.route(event)
 
 document.addEventListener("click", (event) => {
   const link = event.target.closest("a")
+
+  // Para link externo, não faz nada
+  if (link.classList.contains('link-active')) {
+    return 
+  }
   
   if (link) {
     route(event)
