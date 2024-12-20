@@ -86,7 +86,7 @@
  /* ---- Conteúdo secundário -----  */
 
   section:not(:first-of-type) {
-    padding: 3.6rem 4rem 0rem 4rem;
+    padding: top 3.6rem;
   }
 
   .titleSection {
