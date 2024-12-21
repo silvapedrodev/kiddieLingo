@@ -1,5 +1,6 @@
 import { setActiveLink, toggleNavStartButton  } from "./mobile-navbar.js"
 import { loadExercises} from "./exercises.js"
+import { initializeAlphabetCards } from "./alphabet.js"
 
 export class Router {
   routes = {}
@@ -36,15 +37,27 @@ export class Router {
       this.renderDynamicContent(path, pagesContent)
       this.updatePageCSS(route)
       
-      if (path === "/to-be") {
-        loadExercises()
-      }
+      // Chama o conteúdo específico da rota
+      this.handleRouteSpecificLogic(path)
 
     } catch (error) {
       this.handleError(error)
     } finally {
       this.hideLoader(loading)
       setActiveLink()
+    }
+  }
+
+  handleRouteSpecificLogic(path) {
+    // Mapeia rotas para funções específicas
+    const routeHandlers = {
+      "/to-be": loadExercises,
+      "/alphabet": initializeAlphabetCards,
+    }
+
+    // Executa a função correspondente à rota, se existir
+    if (routeHandlers[path]) {
+      routeHandlers[path]() // Executa a função associada à rota
     }
   }
 
