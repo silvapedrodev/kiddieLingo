@@ -91,9 +91,8 @@ section.main-content-2 {
   z-index: 3;
 }
 
-.main-content-2 h2{
-  font-size: 3.2rem;
-  text-align: center;
+.main-content-2 .titleSection {
+  color: var(--gray-0);
 }
 
 .main-content-2 div {
