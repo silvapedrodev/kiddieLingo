@@ -1,4 +1,5 @@
 import initializeMobileNav from "./mobile-navbar.js"
+import { setActiveLink } from "./mobile-navbar.js"
 import { Router } from "./router.js"
 import { loadExercises} from "./exercises.js";
 
@@ -24,9 +25,10 @@ window.route = (event) => router.route(event)
 
 document.addEventListener("click", (event) => {
   const link = event.target.closest("a")
-
+  const externalLink = event.target.closest("footer a")
+  
   // Para link externo, não faz nada
-  if (link.classList.contains('link-active')) {
+  if (externalLink) {
     return 
   }
   
