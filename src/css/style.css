@@ -340,7 +340,6 @@ section:first-child {
   display: block;
   max-width: 60rem;
   width: 100%;
-  aspect-ratio: 272 / 245;
   height: auto;
   object-fit: cover;
   margin: auto;
@@ -369,8 +368,6 @@ section.main-content {
   background-color: var(--purple-50);
   border-radius: 8px;
 }
-
-
 
 
 /* ------- footer -------  */
