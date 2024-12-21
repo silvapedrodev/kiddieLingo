@@ -9,7 +9,7 @@ export function initializeAlphabetCards() {
     console.error("Container '.alphabet-container' não encontrado!");
     return;
   }
-
+  
   const cardsHTML = alphabetData.map(item => `
     <div class="card letter-${item.title[0].toLowerCase()}">
       <h2 class="letter">${item.title}</h2>
