@@ -120,7 +120,7 @@ function renderSingleChoiceQuestion(container, question, index) {
   const questionHTML = `
     <form class="question-form">
       <fieldset>
-        <h2 lang="en-us">${String.fromCharCode(97 + index)}&#41; ${question.text}</h2>
+        <h2 lang="en-US">${String.fromCharCode(97 + index)}&#41; ${question.text}</h2>
         ${shuffledOptions
           .map(
             (option, i) => `
@@ -156,7 +156,7 @@ function renderInputExercise(container, question, index) {
   const questionHTML = `
     <form class="question-form">
       <fieldset>
-        <p lang="en-us">${String.fromCharCode(97 + index)}&#41;
+        <p lang="en-US">${String.fromCharCode(97 + index)}&#41;
           ${parts[0]}
           <label for="input01-${index}"></label>
           <input type="text" id="input01-${index}" class="answer-input" maxlength="3">
@@ -185,7 +185,7 @@ function renderInterrogativeExercise(container, question, index) {
   const questionHTML = `
     <form class="question-form">
       <fieldset>
-        <h2 lang="en-us">${String.fromCharCode(97 + index)}&#41; ${question.text}</h2>
+        <h2 lang="en-US">${String.fromCharCode(97 + index)}&#41; ${question.text}</h2>
         <p>
           <label for="input01-${index}"></label>
           <input type="text" id="input01-${index}" class="answer-input">

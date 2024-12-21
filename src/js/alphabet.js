@@ -14,7 +14,7 @@ export function initializeAlphabetCards() {
     <div class="card letter-${item.title[0].toLowerCase()}">
       <h2 class="letter">${item.title}</h2>
       <img src="${item.imgSrc}" width="60px" height="60px" alt="${item.imgAlt}">
-      <p lang="en-us" class="word">${item.paragraph}</p>
+      <p lang="en-US" class="word">${item.paragraph}</p>
     </div>
   `).join('');
 
