@@ -35,36 +35,3 @@ section.main-content {
 .word {
   font-size: 2rem;
 }
-
-@media (max-width: 374px) {
-  .card {
-    flex-basis: 30%;
-  }
-}
-
-
-@media (min-width: 797px) {
-
-  /* #alphabet-container {
-    gap: 1.6rem;
-  }
-
-  .card {
-    width: 13rem;
-    padding: 1rem;
-  }
-
-  .card h2 {
-    font-size: 3.6rem;
-  }
-
-  .card img {
-    width: 7rem;
-    aspect-ratio: 1 / 1; 
-  }
-
-  .word {
-    font-size: 2.8rem;
-  } */
-
-}

@@ -155,5 +155,4 @@ export const alphabetData = [
     imgAlt: "Zebra",
     paragraph: "zebra"
   }
- 
 ]
