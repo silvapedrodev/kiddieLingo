@@ -41,3 +41,7 @@ document.addEventListener("click", (event) => {
 document.addEventListener("DOMContentLoaded", () => {
   loadExercises()
 })
+
+// ------ Ano atual no footer ------ 
+const year = new Date().getFullYear()
+document.querySelector("#currentYear").textContent = year
