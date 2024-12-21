@@ -93,6 +93,10 @@
     font-size: 3.6rem;
   }
 
+  section.main-content {
+    padding: 3.6rem 4rem;
+  }
+
   /* ------- footer -------  */
 
   footer {
