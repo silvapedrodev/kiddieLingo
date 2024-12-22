@@ -1,4 +1,5 @@
-// Refatoração completa do código
+import { alphabetData } from '../../data/alphabetData.js';
+import { numbersData } from "../../data/numbersData.js";
 
 export function loadExercises() {
   Promise.all([
@@ -202,6 +203,50 @@ function renderInterrogativeExercise(container, question, index) {
   `
 
   container.insertAdjacentHTML("beforeend", questionHTML)
+}
+
+export function renderAlphabetCards() {
+  const container = document.querySelector("#alphabet-container");
+
+  // Verifica se o container existe antes de continuar
+  if (!container) {
+    console.error("Container '.alphabet-container' não encontrado!");
+    return;
+  }
+  
+  const cardsHTML = alphabetData.map(item => `
+    <div class="card letter-${item.title[0].toLowerCase()}">
+      <h2 class="letter">${item.title}</h2>
+      <img src="${item.imgSrc}" width="60px" height="60px" alt="${item.imgAlt}">
+      <p lang="en-US" class="word">${item.paragraph}</p>
+    </div>
+  `).join('');
+
+  // Injeta o HTML no container
+  container.innerHTML = cardsHTML;
+}
+
+export function renderNumbersCards() {
+  const container = document.querySelector("#numbers-container");
+
+  // Verifica se o container existe antes de continuar
+  if (!container) {
+    console.error("Container '#numbers-container' não encontrado!");
+    return;
+  }
+
+  const cardsHTML = numbersData.map((item, index) => 
+    `
+    <div class="card number-${index}">
+      <img src="${item.imgSrc}" width="100px" height="100px" alt="Número ${item.title}">
+      <p lang="en-US">&#40;<span class="number-${index}">${index}</span>
+        = <span class="number-${index}">${item.title}</span>&#41;</p>
+    </div>
+    `
+  ).join('');
+
+  // Injeta o HTML no container
+  container.innerHTML = cardsHTML;
 }
 
 function addSubmitListeners(containers, submitHandler) {
