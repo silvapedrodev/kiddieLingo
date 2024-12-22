@@ -15,7 +15,7 @@ section:first-child {
   text-align: center;
   place-content: center; 
 
-  margin-top: 0rem;
+  margin-top: 1rem;
 }
 
 #error div {
