@@ -28,22 +28,27 @@
   --purple-300: #9A50FD;
   --purple-400: #A069A8;
   --purple-500: #583BBF;
+  --purple-750: #8731E5;
   --purple-800: #260259;
   --purple-850: #340773;
   --purple-900: rgba(37, 25, 81, 0.20);
 
+  --pink-350: #FF639B;
   --pink-400: #F65690;
   --pink-500: #D96A93;
   --pink-600: #FB7688;
   --pink-900: #8C455F;
 
+  --blue-300: #3399FF;
   --blue-500: #75C4FF;
   --blue-400: #7468F8;
 
+  --green-300: #85CC5D;
   --green-400: #3BBF8B;
   --green-600: #84CC16;
 
   --yellow-300: #FEC563;
+  --yellow-350: #FFC835;
   --yellow-400: #FDD587;
   --yellow-500: #EFBB57;
   --orange-400: #F68D6B;

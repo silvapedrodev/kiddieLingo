@@ -1,5 +1,6 @@
 import { alphabetData } from '../../data/alphabetData.js';
 import { numbersData } from "../../data/numbersData.js";
+import { shapesData } from '../../data/shapesData.js';
 
 export function loadExercises() {
   Promise.all([
@@ -206,12 +207,12 @@ function renderInterrogativeExercise(container, question, index) {
 }
 
 export function renderAlphabetCards() {
-  const container = document.querySelector("#alphabet-container");
+  const container = document.querySelector("#alphabet-container")
 
   // Verifica se o container existe antes de continuar
   if (!container) {
-    console.error("Container '.alphabet-container' não encontrado!");
-    return;
+    console.error("Container '.alphabet-container' não encontrado!")
+    return
   }
   
   const cardsHTML = alphabetData.map(item => `
@@ -220,19 +221,19 @@ export function renderAlphabetCards() {
       <img src="${item.imgSrc}" width="60px" height="60px" alt="${item.imgAlt}">
       <p lang="en-US" class="word">${item.paragraph}</p>
     </div>
-  `).join('');
+  `).join('')
 
   // Injeta o HTML no container
-  container.innerHTML = cardsHTML;
+  container.innerHTML = cardsHTML
 }
 
 export function renderNumbersCards() {
-  const container = document.querySelector("#numbers-container");
+  const container = document.querySelector("#numbers-container")
 
   // Verifica se o container existe antes de continuar
   if (!container) {
-    console.error("Container '#numbers-container' não encontrado!");
-    return;
+    console.error("Container '#numbers-container' não encontrado!")
+    return
   }
 
   const cardsHTML = numbersData.map((item, index) => 
@@ -243,10 +244,29 @@ export function renderNumbersCards() {
         = <span class="number-${index}">${item.title}</span>&#41;</p>
     </div>
     `
-  ).join('');
+  ).join('')
 
   // Injeta o HTML no container
-  container.innerHTML = cardsHTML;
+  container.innerHTML = cardsHTML
+}
+
+export function renderShapesCards() {
+  const container = document.querySelector("#shapes-container")
+
+  // Verifica se o container existe antes de continuar
+  if (!container) {
+  console.error("Container '#shapes-container' não encontrado!")
+  return
+  }
+
+  const cardsHTML = shapesData.map(item => `
+    <div class="card ${item.title.toLowerCase()} ${item.color}">
+        <img src="${item.imgSrc}" alt="${item.title}">
+        <p lang="en-US">${item.title}</p>
+      </div>
+    `).join('')
+  
+  container.innerHTML = cardsHTML
 }
 
 function addSubmitListeners(containers, submitHandler) {

@@ -1,5 +1,9 @@
 import { setActiveLink, toggleNavStartButton  } from "./mobile-navbar.js"
-import { loadExercises, renderAlphabetCards, renderNumbersCards} from "./exercises.js"
+import { 
+  loadExercises, 
+  renderAlphabetCards, 
+  renderNumbersCards,
+  renderShapesCards} from "./exercises.js"
 
 export class Router {
   routes = {}
@@ -53,6 +57,7 @@ export class Router {
       "/to-be": loadExercises,
       "/alphabet": renderAlphabetCards,
       "/numbers": renderNumbersCards,
+      "/shapes": renderShapesCards,
     }
 
     // Executa a função correspondente à rota, se existir
