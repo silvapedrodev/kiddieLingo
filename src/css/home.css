@@ -112,6 +112,7 @@ section.main-content-2 {
 }
 
 .main-content-2 div p {
+  text-align: center;
   font-size: 1.4rem;
   margin-top: 4px;
   margin-bottom: 2.4rem;
