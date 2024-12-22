@@ -1,0 +1,57 @@
+body, header, #main-page {
+  background-color: var(--gray-100);
+  color: var(--black-900);
+}
+
+section:first-child {
+  padding: 1.6rem;
+}
+
+#error {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  background: var(--gray-100);
+  text-align: center;
+  place-content: center; 
+
+  margin-top: 0rem;
+}
+
+#error div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: var(--purple-500);
+  font-size: 12vh;
+}
+
+h2 {
+  margin-top: 2.4rem;
+  margin-bottom: 2.4rem;
+  text-transform: uppercase;
+}
+
+#error p {
+  max-width: 90rem;
+  margin-bottom: 2rem;
+}
+
+#error div img {
+  max-width: 20rem;
+  margin-top: 3rem;
+}
+
+a.btnDefault {
+  width: 30rem;
+  margin-top: 2.4rem;
+}
+
+/* ---- esconde o footer ----  */
+footer {
+  display: none;
+}
