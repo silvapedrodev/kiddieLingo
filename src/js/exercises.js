@@ -261,7 +261,7 @@ export function renderShapesCards() {
 
   const cardsHTML = shapesData.map(item => `
     <div class="card ${item.title.toLowerCase()} ${item.color}">
-        <img src="${item.imgSrc}" alt="${item.title}">
+        <img src="${item.imgSrc}" width="100px" height="100px" alt="${item.title}">
         <p lang="en-US">${item.title}</p>
       </div>
     `).join('')
