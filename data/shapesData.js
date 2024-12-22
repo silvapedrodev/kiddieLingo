@@ -78,5 +78,5 @@ export const shapesData = [
     title: "Rhombus",
     imgSrc: "/src/public/img/shapes/rhombus.svg",
     color:"green"
-  },
+  }
 ]
