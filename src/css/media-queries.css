@@ -40,6 +40,11 @@
     width: 100%;
   }
 
+  /* -------- Botão de voltar para o topo -------  */
+  .btnGoTop {
+    padding: 1.5rem 2rem;
+  }
+
   section:first-child {
     max-width: 1280px;
     display: grid;

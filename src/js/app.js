@@ -12,6 +12,33 @@ router.add('/to-be/learn-more', "/src/pages/learn-more.html")
 router.add('/shapes', "/src/pages/shapes.html")
 router.add('/numbers', "/src/pages/numbers.html")
 
+// ------ Ano atual no footer ------ 
+const year = new Date().getFullYear()
+document.querySelector("#currentYear").textContent = year
+
+// ------ Botão de rolagem no canto da tela ----- 
+function initializeGoTopButton() {
+  const btnGoToTop = document.querySelector(".btnGoTop")
+  const scrollThreshold = 150; 
+
+  // Exibe ou oculta o botão ao rolar a página
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > scrollThreshold) {
+      btnGoToTop.style.display = 'block'; 
+    } else {
+      btnGoToTop.style.display = 'none'; 
+    }
+  })
+
+  // Volta ao topo ao clicar no botão
+  btnGoToTop.addEventListener('click', function () {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+    })
+  })
+}
+
 initializeMobileNav()
 
 window.onpopstate = () => {
@@ -40,8 +67,5 @@ document.addEventListener("click", (event) => {
 // Executa a lógica dos exercícios ao carregar a página
 document.addEventListener("DOMContentLoaded", () => {
   loadExercises()
+  initializeGoTopButton()
 })
-
-// ------ Ano atual no footer ------ 
-const year = new Date().getFullYear()
-document.querySelector("#currentYear").textContent = year
