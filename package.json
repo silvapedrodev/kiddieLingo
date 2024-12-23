@@ -1,0 +1,15 @@
+{
+  "name": "kiddielingo",
+  "version": "0.9.0",
+  "description": "[![NPM](https://img.shields.io/npm/l/react)](https://github.com/killera12/Analisador_Numeros/blob/main/LICENSE)",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
