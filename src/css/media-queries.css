@@ -2,7 +2,6 @@
 
 @media screen and (min-width: 798px) {
   
-
   nav {
     height: 100%;
     display: grid;
@@ -45,6 +44,7 @@
     padding: 1.5rem 2rem;
   }
 
+  /* -------- Conteúdo primário ------------  */
   section:first-child {
     max-width: 1280px;
     display: grid;
@@ -72,6 +72,10 @@
     font-size: 3.2rem;
   }
 
+  .left-content h2 {
+    font-size: 2.4rem;
+  }
+
   .left-content p {
     font-size: 1.6rem;
   }
@@ -89,7 +93,6 @@
   }
 
  /* ---- Conteúdo secundário -----  */
-
   section:not(:first-of-type) {
     padding: top 3.6rem;
   }
@@ -103,7 +106,6 @@
   }
 
   /* ------- footer -------  */
-
   footer {
     display: grid;
     grid-template-columns: 1fr 1fr; 
@@ -132,13 +134,12 @@
   }
   
   footer hr {
-    grid-column: 1 / -1; /* Faz com que o <hr> ocupe toda a largura */
+    grid-column: 1 / -1; 
   }
   
   footer .copyright {
-    grid-column: 1 / -1; /* A .copyright ocupa toda a largura da linha abaixo */
+    grid-column: 1 / -1; 
     padding: 1rem;
-    text-align: center; /* Centraliza o texto dentro da div copyright */
+    text-align: center; 
   }
-
 }

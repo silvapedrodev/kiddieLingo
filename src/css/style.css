@@ -55,7 +55,6 @@
   --red-500: #FF3B30;
 }
 
-
 /* bloqueia a rolagem quando o menu está aberto */
 body.no-scroll, html.no-scroll {
   overflow-y: hidden; 
@@ -76,16 +75,14 @@ header {
 }
 
 nav {
-  background-color: var(--gray-0);
-
-  height: 8rem;
-  padding: 1.6rem;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: auto;
 
+  background-color: var(--gray-0);
+  height: 8rem;
+  padding: 1.6rem;
   border-radius: 0 0rem 0.8rem 0.8rem;
   box-shadow: 0 2px 8px var(--purple-900);
 }
@@ -367,7 +364,7 @@ section:first-child {
 }
 
 .left-content h2 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: var(--pink-500);
 }
 
@@ -390,7 +387,6 @@ section:first-child {
 }
 
 /* ---- Conteúdo secundário -----  */
-
 section.main-content {
   padding: 3.6rem 1.6rem;
 }
@@ -406,20 +402,17 @@ section.main-content {
 }
 
 /* ---- Componentes -----  */
-
 .card {
   color: var(--black-900);
   background-color: var(--purple-50);
   border-radius: 8px;
 }
 
-
 /* ------- footer -------  */
 footer {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-
   background-color: var(--purple-500);
   color: var(--gray-0);
 
