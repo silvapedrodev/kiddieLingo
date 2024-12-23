@@ -12,6 +12,7 @@
   <img src="https://img.shields.io/badge/-HTML-05122A?style=flat&logo=html5"></img>
   <img src="https://img.shields.io/badge/-CSS-05122A?style=flat&logo=css3"></img>
   <img src="https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript"></img>
+  <img src="https://img.shields.io/badge/-SPA-05122A?style=flat&logo=json"></img>
 </p>
 
 <img src="./src/public/preview/project-preview.png" alt="project-preview" width="100%"></img>
@@ -22,6 +23,24 @@ O **KiddieLingo** é uma plataforma educacional para o ensino de inglês voltada
 
 **EN:**  
 **KiddieLingo** is an educational platform designed to teach English to low-income children. It was developed as part of an academic extension activity project, focusing on providing an accessible and inclusive learning experience aligned with the SDGs of **Quality Education** and **Reduced Inequalities**.
+
+
+## 🛠️ Features
+
+- 📱 **Responsive Design:** KiddieLingo is built with a mobile-first approach, ensuring a seamless and consistent user experience across mobile devices, tablets, and desktops.
+
+- ✨ **Single Page Application (SPA):** Navigate between pages without full-page reloads, delivering a smooth and efficient user experience.
+
+- 📂 **Dynamic Exercises via JSON:** Exercises are loaded from JSON files, making it easy to update and expand the learning materials.
+
+- 🔗 **Modular Code Structure:** The project follows a modular code organization, simplifying maintenance and scalability.
+
+- 💻 **Built with Pure HTML, CSS, and Vanilla JavaScript:** The project is entirely developed using HTML, CSS, and vanilla JavaScript, avoiding frameworks to ensure simplicity and transparency.
+
+- 🔄 **Dynamic URL Updates:** The URL updates dynamically to reflect the user's navigation without reloading the page, consistent with SPA behavior.
+
+- 🌍 **Inclusive Education:** KiddieLingo is designed to promote quality education and reduce inequalities, aligning with the Sustainable Development Goals (SDGs).
+
 
 ## 🎨👀 Project Preview
 
