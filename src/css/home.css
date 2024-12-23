@@ -79,7 +79,6 @@ section .btnStartMain {
 }
 
 /* ------- Main | 2º conteúdo   ------- */
-
 section.main-content-2 {
   display: flex;
   flex-direction: column;
@@ -141,7 +140,6 @@ section.main-content-2 {
 }
 
 /* ------ Main | 3º conteúdo ------  */
-
 section.main-content-3 {
   display: flex;
   flex-direction: column;
@@ -217,7 +215,6 @@ footer {
   .right-content {
     margin-top: 8rem;
   }
-
 }
 
 @media screen and (min-width: 798px) {
@@ -280,7 +277,6 @@ footer {
   }
 
   /* ---- Main | 2º conteúdo ----  */
-
   section.main-content-2 {
     flex-direction: row;
     flex-wrap: wrap;
@@ -331,7 +327,6 @@ footer {
   }
 
   /* ---- Main | 3º conteúdo ----  */
-
   section.main-content-3 {
     gap: 6rem;
     padding: 8rem 1.6rem 5.6rem 1.6rem;
