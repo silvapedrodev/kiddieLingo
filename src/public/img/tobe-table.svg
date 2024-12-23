@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 296">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: #583bbf;
+      }
+
+      .cls-1, .cls-6 {
+        letter-spacing: 0em;
+      }
+
+      .cls-7 {
+        fill: none;
+        stroke: #583bbf;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-8, .cls-6, .cls-9, .cls-10 {
+        fill: #71717a;
+      }
+
+      .cls-2, .cls-9 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-11, .cls-10 {
+        font-family: Fredoka-Regular, Fredoka;
+        font-size: 18px;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <text class="cls-10" transform="translate(42.41 53.17)"><tspan x="0" y="0">I</tspan></text>
+  <text class="cls-10" transform="translate(30.43 90.88)"><tspan x="0" y="0">you</tspan></text>
+  <text class="cls-10" transform="translate(35.41 129.73)"><tspan x="0" y="0">he</tspan></text>
+  <text class="cls-10" transform="translate(31.28 167.87)"><tspan x="0" y="0">she</tspan></text>
+  <text class="cls-10" transform="translate(39.69 204.61)"><tspan x="0" y="0">it</tspan></text>
+  <text class="cls-10" transform="translate(33.36 242.45)"><tspan x="0" y="0">we</tspan></text>
+  <text class="cls-10" transform="translate(27.29 281.35)"><tspan x="0" y="0">they</tspan></text>
+  <text class="cls-10" transform="translate(10.86 21.03)"><tspan x="0" y="0">Pronoun</tspan></text>
+  <text class="cls-10" transform="translate(125.46 21.03)"><tspan x="0" y="0">Affirmative</tspan></text>
+  <text class="cls-10" transform="translate(322.04 21.03)"><tspan x="0" y="0">Negative</tspan></text>
+  <text class="cls-11" transform="translate(135.6 53.17)"><tspan class="cls-8" x="0" y="0">I </tspan><tspan class="cls-3" x="8.48" y="0">am</tspan><tspan class="cls-6" x="33.68" y="0" xml:space="preserve"> - I</tspan><tspan class="cls-1" x="54.4" y="0">&apos;m</tspan></text>
+  <text class="cls-11" transform="translate(108.03 90.88)"><tspan class="cls-8" x="0" y="0">you </tspan><tspan class="cls-5" x="33.89" y="0">are</tspan><tspan class="cls-8" x="61.25" y="0" xml:space="preserve"> - you</tspan><tspan class="cls-4" x="107.39" y="0">&apos;re</tspan></text>
+  <text class="cls-11" transform="translate(101.76 281.35)"><tspan class="cls-8" x="0" y="0">they </tspan><tspan class="cls-5" x="40.16" y="0">are</tspan><tspan class="cls-6" x="67.52" y="0" xml:space="preserve"> - they</tspan><tspan class="cls-5" x="119.91" y="0">&apos;re</tspan></text>
+  <text class="cls-11" transform="translate(113.9 242.45)"><tspan class="cls-8" x="0" y="0">we </tspan><tspan class="cls-5" x="28.03" y="0">are</tspan><tspan class="cls-8" x="55.39" y="0" xml:space="preserve"> - we</tspan><tspan class="cls-1" x="95.65" y="0">&apos;re</tspan></text>
+  <text class="cls-11" transform="translate(138.46 204.61)"><tspan class="cls-8" x="0" y="0">it </tspan><tspan class="cls-5" x="15.37" y="0">is</tspan><tspan class="cls-6" x="27.67" y="0" xml:space="preserve"> - </tspan><tspan class="cls-1" x="44.48" y="0">it&apos;s</tspan></text>
+  <text class="cls-11" transform="translate(121.65 167.87)"><tspan class="cls-8" x="0" y="0">she </tspan><tspan class="cls-5" x="32.18" y="0">is</tspan><tspan class="cls-6" x="44.48" y="0" xml:space="preserve"> - she</tspan><tspan class="cls-1" x="88.9" y="0">&apos;s</tspan></text>
+  <text class="cls-11" transform="translate(129.92 129.73)"><tspan class="cls-8" x="0" y="0">he </tspan><tspan class="cls-5" x="23.92" y="0">is</tspan><tspan class="cls-8" x="36.22" y="0" xml:space="preserve"> - he</tspan><tspan class="cls-1" x="72.38" y="0">&apos;s</tspan></text>
+  <text class="cls-11" transform="translate(288.76 53.17)"><tspan class="cls-8" x="0" y="0">I </tspan><tspan class="cls-5" x="8.48" y="0">am not</tspan><tspan class="cls-8" x="65.12" y="0" xml:space="preserve"> - I</tspan><tspan class="cls-5" x="85.84" y="0">&apos;m not</tspan><tspan class="cls-8" x="135.41" y="0"> </tspan></text>
+  <text class="cls-11" transform="translate(263.35 90.88)"><tspan class="cls-8" x="0" y="0">you </tspan><tspan class="cls-5" x="33.89" y="0">are not</tspan><tspan class="cls-9" x="92.7" y="0" xml:space="preserve"> - you </tspan><tspan class="cls-5" x="143.4" y="0">aren&apos;t</tspan></text>
+  <text class="cls-11" transform="translate(288.38 129.73)"><tspan class="cls-8" x="0" y="0">he </tspan><tspan class="cls-5" x="23.92" y="0">is not</tspan><tspan class="cls-8" x="67.66" y="0" xml:space="preserve"> - he </tspan><tspan class="cls-5" x="108.39" y="0">isn&apos;t</tspan></text>
+  <text class="cls-11" transform="translate(280.12 167.87)"><tspan class="cls-8" x="0" y="0">she </tspan><tspan class="cls-5" x="32.18" y="0">is not</tspan><tspan class="cls-8" x="75.92" y="0" xml:space="preserve"> - she </tspan><tspan class="cls-2" x="124.92" y="0">isn&apos;t</tspan></text>
+  <text class="cls-11" transform="translate(296.93 204.61)"><tspan class="cls-8" x="0" y="0">it </tspan><tspan class="cls-2" x="15.37" y="0">is not</tspan><tspan class="cls-8" x="59.11" y="0" xml:space="preserve"> - it </tspan><tspan class="cls-5" x="91.29" y="0">isn&apos;t</tspan></text>
+  <text class="cls-11" transform="translate(269.21 242.45)"><tspan class="cls-8" x="0" y="0">we </tspan><tspan class="cls-5" x="28.03" y="0">are not</tspan><tspan class="cls-9" x="86.83" y="0" xml:space="preserve"> - we </tspan><tspan class="cls-5" x="131.67" y="0">aren&apos;t</tspan></text>
+  <text class="cls-11" transform="translate(257.08 281.35)"><tspan class="cls-8" x="0" y="0">they </tspan><tspan class="cls-5" x="40.16" y="0">are not</tspan><tspan class="cls-8" x="98.96" y="0" xml:space="preserve"> - they </tspan><tspan class="cls-5" x="155.93" y="0">aren&apos;t</tspan></text>
+  <line class="cls-7" x1="96" x2="96" y2="296"/>
+  <line class="cls-7" y1="29" x2="467" y2="29"/>
+  <line class="cls-7" x1="250" x2="250" y2="296"/>
+</svg>

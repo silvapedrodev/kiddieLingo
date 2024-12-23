@@ -35,6 +35,11 @@ section.main-content {
   margin-top: 2.4rem;
 }
 
+.content-2 img {
+  width: 100%;
+  height: auto;
+}
+
 .content-2 div h3 {
   font-size: 2.4rem;
 }
