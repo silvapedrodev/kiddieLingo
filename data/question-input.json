@@ -2,7 +2,7 @@
   {
     "type": "affirmative",
     "text": "I ____ from Brazil and my friend ____ from the USA.",
-    "answers": ["am", "are"]
+    "answers": ["am", "is"]
   },
   {
     "type": "affirmative",

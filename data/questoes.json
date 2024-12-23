@@ -106,7 +106,7 @@
     "text": "My friend _____ a doctor and my brothers _____ lawyers.",
     "options": [
       "is - am",
-      "are - is",
+      "is - are",
       "am - is"
     ],
     "answer": "is - are"
@@ -145,7 +145,7 @@
     "type": "pair",
     "text": "I _____ from Brazil and my friend _____ from Argentina.",
     "options": [
-      "am - are",
+      "am - is",
       "is - are",
       "are - is"
     ],
