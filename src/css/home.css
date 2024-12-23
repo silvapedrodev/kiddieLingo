@@ -67,13 +67,15 @@ section .btnStartMain {
 }
 
 .card h3 {
+  text-align: center;
   font-weight: 500;
   color: var(--black-900);
   margin-top: 8px;
 }
 
 .card p {
-  color: var(--gray-400);
+  text-align: center;
+  color: var(--gray-500);
 }
 
 /* ------- Main | 2º conteúdo   ------- */
